@@ -71,33 +71,9 @@ function showConfetti() {
     });
 }
 
-function handleDragStart(event) {
-    event.stopPropagation();
-    event.dataTransfer.setData('color', event.target.dataset.color);
-
-    const ghost = document.createElement('div');
-    ghost.className = 'ghost';
-    ghost.style.backgroundColor = event.target.dataset.color;
-    ghost.style.position = 'absolute';
-    ghost.style.width = '60px'; // Tamanho da cor
-    ghost.style.height = '60px'; // Tamanho da cor
-    ghost.style.borderRadius = '50%';
-    ghost.style.opacity = '0.7';
-    document.body.appendChild(ghost);
-
-    event.dataTransfer.setDragImage(ghost, 30, 30);
-    setTimeout(() => {
-        ghost.remove();
-    }, 0);
-}
-
-function handleDragOver(event) {
-    event.preventDefault();
-}
-
-function handleDrop(event) {
-    event.preventDefault();
-    const color = event.dataTransfer.getData('color');
+// Função para verificar a cor clicada
+function handleColorClick(event) {
+    const color = event.target.dataset.color;
 
     if (color === foodData[foodArray[currentIndex - 1]].color || color === foodData[foodArray[currentIndex - 1]].color.toLowerCase()) {
         foodImageElement.src = foodData[foodArray[currentIndex - 1]].image;
@@ -108,19 +84,10 @@ function handleDrop(event) {
     }
 }
 
-function handleDragEnd(event) {
-    // Limpar quaisquer estilos ou classes relacionados ao arrasto
-}
-
 // Adicionar event listeners para os círculos de cor
 colors.forEach(color => {
-    color.addEventListener('dragstart', handleDragStart);
-    color.addEventListener('dragend', handleDragEnd);
+    color.addEventListener('click', handleColorClick);
 });
-
-// Adicionar eventos de arrastar e soltar na imagem do alimento
-foodImageElement.addEventListener('dragover', handleDragOver);
-foodImageElement.addEventListener('drop', handleDrop);
 
 // Inicializar o jogo
 chooseFood();
@@ -160,4 +127,28 @@ document.getElementById('start-music').addEventListener('mouseup', function() {
 
 document.getElementById('start-music').addEventListener('mouseleave', function() {
     this.classList.remove('active');
+});
+
+window.onload = function() {
+    if (!sessionStorage.getItem('introShown')) {
+        document.getElementById('intro-screen').style.visibility = 'visible'; // Mostra a tela
+        const introVideo = document.getElementById('intro-video');
+        introVideo.addEventListener('ended', function() {
+            document.getElementById('intro-screen').style.visibility = 'hidden'; // Esconde a tela de introdução
+            sessionStorage.setItem('introShown', 'true');
+        });
+    } else {
+        document.getElementById('intro-screen').style.visibility = 'hidden'; // Esconde a tela de introdução
+    }
+};
+
+// Detecta o clique na imagem de "Pular"
+const skipImage = document.getElementById('skip-img');
+const introScreen = document.getElementById('intro-screen');
+const introVideo = document.getElementById('intro-video');
+
+skipImage.addEventListener('click', function() {
+    introScreen.style.visibility = 'hidden';
+    introVideo.pause();
+    sessionStorage.setItem('introShown', 'true');
 });
