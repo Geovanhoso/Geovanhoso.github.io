@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cooking Yummy</title>
+    <style>
+        /* Garantir que o corpo ocupe 100% da tela */
+        body {
+            background-image: url('fundinho.png'); /* Imagem de fundo */
+            background-size: cover; /* Faz a imagem cobrir toda a tela */
+            background-position: center; /* Centraliza a imagem */
+            background-attachment: fixed; /* Faz com que a imagem de fundo fique fixa enquanto rola */
+            font-family: 'Comic Sans MS', sans-serif; /* Fonte divertida */
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            color: white; /* Texto branco para contraste */
+            height: 100vh; /* Ocupa 100% da altura da tela */
+        }
+
+        /* Estilo para a imagem do título */
+        .titulo-img {
+            width: 100%; /* Aumentando a largura da imagem para cobrir toda a tela */
+            max-width: 1000px; /* Ajuste o tamanho máximo da imagem */
+            margin-bottom: 40px; /* Aumenta o espaço abaixo da imagem */
+            height: auto; /* Garante que a altura seja proporcional à largura */
+        }
+
+        /* Container principal com flexbox */
+        .button-container {
+            display: flex;
+            justify-content: space-between; /* Espaço entre as colunas */
+            gap: 70px; /* Aumentei o espaço entre as colunas */
+            max-width: 1300px; /* Limita a largura para não esticar muito */
+            margin: 0 auto;
+        }
+
+        /* Cada coluna (esquerda ou direita) */
+        .column {
+            display: flex;
+            flex-direction: column;
+            gap: 50px; /* Aumentei o espaço entre os botões dentro da coluna */
+            width: 45%; /* Controla o tamanho das colunas */
+        }
+
+        /* Estilo base para todos os botões */
+        .button {
+            border: 2px solid black; /* Adiciona uma borda preta fina */
+            border-radius: 25px; /* Aumentei a curvatura para dar um estilo mais "gordinho" */
+            padding: 30px 50px; /* Menor comprimento (menos espaço lateral) e mais altura */
+            font-size: 40px; /* Aumentei o tamanho da fonte */
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%; /* Faz os botões ocuparem 100% da largura da coluna */
+            height: 120px; /* Aumentei a altura para deixar "mais gordinho" */
+            text-align: center; /* Centraliza o texto horizontalmente */
+            line-height: 120px; /* Alinha o texto verticalmente no centro */
+            text-decoration: none; /* Remove o sublinhado dos links */
+        }
+
+        /* Classe para o primeiro botão */
+        .button1 {
+            background-color: #fc4545; 
+        }
+
+        /* Classe para o segundo botão */
+        .button2 {
+            background-color: #f1d715; 
+        }
+
+        /* Classe para o terceiro botão */
+        .button3 {
+            background-color: #70c732; 
+        }
+
+        /* Classe para o quarto botão */
+        .button4 {
+            background-color: #22b7ff;
+        }
+
+        /* Efeito hover para todos os botões */
+        .button:hover {
+            transform: scale(1.1); /* Efeito de aumento no botão */
+        }
+
+        /* Remover o outline do botão ao focar */
+        .button:focus {
+            outline: none;
+        }
+
+        /* Remover o sublinhado dos links */
+        .button span {
+            display: block;
+            margin-top: 10px;
+            font-size: 20px;
+        }
+
+        /* GIF de carregamento que ocupa toda a tela */
+        .gif-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw; /* 100% da largura da tela */
+            height: 100vh; /* 100% da altura da tela */
+            background-color: rgba(0, 0, 0, 0.7); /* Cor de fundo semitransparente */
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .gif-overlay img {
+            width: 100%; /* Faz a imagem ocupar 100% da largura da tela */
+            height: 100%; /* Faz a imagem ocupar 100% da altura da tela */
+            object-fit: cover; /* Garante que a imagem cubra a tela sem distorção */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Substituindo o título de texto por uma imagem -->
+    <img src="titulo.png" alt="Cooking Yummy" class="titulo-img">
+
+    <div class="button-container">
+        <!-- Coluna da esquerda -->
+        <div class="column">
+            <a href="#" class="button button1" onclick="showGif('Bud e as Cores/index.html')">
+                Bud e as Cores
+            </a>
+            <a href="#" class="button button2" onclick="showGif('Encaixe os Alimentos/inicial.html')">
+                Encaixe os Alimentos
+            </a>
+        </div>
+
+        <!-- Coluna da direita -->
+        <div class="column">
+            <a href="#" class="button button3" onclick="showGif('Bud e os Legumes/index1.html')">
+                Bud e os Legumes
+            </a>
+            <a href="#" class="button button4" onclick="showGif('Memoria das Frutas/inicial.html')">
+                Memória das Frutas
+            </a>
+        </div>
+    </div>
+
+    <!-- GIF de carregamento em tela cheia -->
+    <div class="gif-overlay" id="gifOverlay">
+        <img src="carregamento.gif" alt="Carregando...">
+    </div>
+
+    <script>
+        function showGif(url) {
+            // Exibir o GIF
+            const gifOverlay = document.getElementById('gifOverlay');
+            gifOverlay.style.display = 'flex'; // Exibe a camada do GIF
+
+            // Após 0.5 segundos, redireciona para a página do jogo
+            setTimeout(function() {
+                window.location.href = url; // Redireciona para o jogo
+            }, 500); // 500ms (meio segundo)
+        }
+    </script>
+
+</body>
+</html>
