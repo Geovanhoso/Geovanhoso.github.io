@@ -28,15 +28,14 @@
             height: auto;
         }
 
-        /* Organiza os botões verticalmente */
         .button-container {
             display: flex;
             flex-direction: column;
             gap: 20px;
             width: 100%;
-            max-width: 500px; /* Ajuste para limitar a largura em telas maiores */
+            max-width: 500px;
             padding: 0 10px;
-            align-items: center; /* Centraliza os botões */
+            align-items: center;
         }
 
         .button {
@@ -50,7 +49,7 @@
             width: 100%;
             text-align: center;
             text-decoration: none;
-            background-color: #555; /* Cor de fundo padrão */
+            background-color: #555;
         }
 
         .button1 { background-color: #fc4545; }
@@ -79,6 +78,19 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+
+        /* Ajustes para telas menores */
+        @media (max-width: 768px) {
+            .titulo-img {
+                max-width: 80%; /* Reduz tamanho do título */
+                margin: 10px 0;
+            }
+
+            .button {
+                padding: 15px; /* Reduz o padding dos botões */
+                font-size: 1.5rem; /* Reduz o tamanho da fonte dos botões */
+            }
         }
     </style>
 </head>
