@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cooking Yummy</title>
     <style>
-        /* Configuração do corpo */
         body {
             background-image: url('fundinho.png');
             background-size: cover;
@@ -17,45 +16,47 @@
             margin: 0;
             color: white;
             height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .titulo-img {
-            width: 100%;
-            max-width: 1000px;
-            margin-bottom: 40px;
+            width: 90%;
+            max-width: 800px;
+            margin: 10px 0;
             height: auto;
         }
 
-        /* Flexbox principal */
         .button-container {
             display: flex;
-            justify-content: space-between;
-            gap: 70px;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            width: 100%;
             max-width: 1300px;
-            margin: 0 auto;
+            padding: 0 10px;
         }
 
-        /* Cada coluna */
         .column {
             display: flex;
             flex-direction: column;
-            gap: 50px;
+            gap: 15px;
             width: 45%;
         }
 
-        /* Estilos padrão do botão */
         .button {
             border: 2px solid black;
-            border-radius: 25px;
-            padding: 30px 50px;
-            font-size: 40px;
+            border-radius: 20px;
+            padding: 20px;
+            font-size: 1.8rem;
             color: white;
             cursor: pointer;
             transition: all 0.3s ease;
             width: 100%;
-            height: 120px;
+            height: auto;
+            line-height: 1.5;
             text-align: center;
-            line-height: 120px;
             text-decoration: none;
         }
 
@@ -65,20 +66,9 @@
         .button4 { background-color: #22b7ff; }
 
         .button:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
-        .button:focus {
-            outline: none;
-        }
-
-        .button span {
-            display: block;
-            margin-top: 10px;
-            font-size: 20px;
-        }
-
-        /* Overlay do GIF */
         .gif-overlay {
             display: none;
             position: fixed;
@@ -98,26 +88,27 @@
             object-fit: cover;
         }
 
-        /* Responsivo para dispositivos móveis (modo paisagem em telas menores) */
-        @media (max-width: 768px) and (orientation: landscape) {
+        /* Responsividade para modo paisagem em telas menores */
+        @media (max-width: 768px) {
+            .titulo-img {
+                max-width: 90%;
+                margin-bottom: 20px;
+            }
+
             .button-container {
                 flex-direction: column;
-                align-items: center;
-                gap: 20px;
-                padding: 0 20px;
+                gap: 10px;
             }
 
             .column {
-                width: 100%;
-                gap: 20px;
+                width: 90%;
+                gap: 10px;
             }
 
             .button {
-                font-size: 20px;      /* Diminui o tamanho da fonte */
-                padding: 15px 30px;   /* Reduz o padding do botão */
-                height: auto;         /* Ajusta a altura automaticamente */
-                width: 100%;          /* Cada botão ocupa a largura completa */
-                line-height: normal;
+                padding: 15px;
+                font-size: 1.6rem;
+                line-height: 1.4;
             }
         }
     </style>
@@ -153,6 +144,7 @@
         function showGif(url) {
             const gifOverlay = document.getElementById('gifOverlay');
             gifOverlay.style.display = 'flex';
+
             setTimeout(function() {
                 window.location.href = url;
             }, 500);
