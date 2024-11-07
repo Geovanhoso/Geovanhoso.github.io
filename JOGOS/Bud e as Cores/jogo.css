@@ -245,18 +245,18 @@ body {
 }
 .colors-container {
     position: absolute;
-    bottom: 30%;        /* Mantém a paleta um pouco mais para baixo */
+    bottom: 15%;        /* Aumentei o valor de 'bottom' para descer mais a paleta */
     left: 0;
     right: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 90%;         /* Aumenta a largura da paleta para 90% da tela */
+    width: 90%;         /* Largura da paleta, pode ser ajustada conforme necessário */
 }
 
 .palette {
     width: 100%;        /* A largura da paleta agora ocupa toda a área disponível */
-    height: 60px;       /* Diminui a altura da paleta */
+    height: 60px;       /* A altura da paleta */
     display: flex;
     justify-content: space-around;
     border-radius: 15px;
@@ -265,12 +265,14 @@ body {
 }
 
 .color {
-    width: 50px;        /* Diminui o tamanho das cores */
-    height: 50px;       /* Diminui o tamanho das cores */
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     cursor: pointer;
     transition: transform 0.3s ease;
+    margin: 0 5px; /* Adiciona 5px de margem entre as cores */
 }
+
 
 /* Efeito de hover */
 .color:hover {
