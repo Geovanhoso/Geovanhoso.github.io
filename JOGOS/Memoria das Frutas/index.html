@@ -5,101 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>facil</title>
     <style>
-        /* Certifique-se de incluir este CSS no arquivo style.css ou diretamente no <style> no HTML */
-
+      /* Geral - Configurações padrão */
 body {
+    font-family: 'Chewy', sans-serif;
+    text-align: center;
     margin: 0;
     padding: 0;
-    font-family: 'Chewy', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    height: 100vh;
 }
 
-/* Configuração padrão para a área de jogo */
+.game-title {
+    font-size: 2rem;
+    margin: 20px;
+}
+
+/* Contêiner do Jogo */
 .game-container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.game-board {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Número de colunas padrão */
-    gap: 10px;
-    max-width: 800px;
-    padding: 10px;
-}
-
-/* Estilo das cartas */
+/* Tamanho das Cartas */
 .card {
-    width: 100px; /* Tamanho padrão */
-    height: 150px; /* Tamanho padrão */
-    border-radius: 8px;
-    background-color: #FFF;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 120px; /* Ajuste para o tamanho ideal das cartas */
+    height: auto;
+    margin: 10px;
     transition: transform 0.3s ease;
 }
 
-.card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-/* Ajustes para tela em modo paisagem */
-@media (max-width: 768px) and (orientation: landscape) {
-    .game-board {
-        grid-template-columns: repeat(6, 1fr); /* Mais colunas no modo paisagem */
-        gap: 5px;
-        padding: 5px;
+/* Ajuste para o modo paisagem */
+@media (orientation: landscape) {
+    .game-title {
+        font-size: 1.5rem; /* Reduz o tamanho do título */
+        margin: 10px 0;
     }
 
     .card {
-        width: 60px; /* Reduz tamanho das cartas para caber na tela em modo paisagem */
-        height: 90px;
+        width: 70%;
+        max-width: 100px; /* Reduz o tamanho das cartas */
+        margin: 5px;
+    }
+
+    .game-board {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 10px;
+        justify-items: center;
+        width: 100%;
+    }
+
+    .game-container {
+        padding: 10px;
     }
 }
 
-/* Ajustes para telas menores que 480px */
-@media (max-width: 480px) and (orientation: landscape) {
-    .game-board {
-        grid-template-columns: repeat(8, 1fr); /* Mais colunas em telas muito pequenas */
-        gap: 5px;
-        padding: 2px;
+/* Ajustes para telas menores no modo retrato */
+@media (max-width: 768px) {
+    .game-title {
+        font-size: 1.2rem;
     }
 
     .card {
-        width: 50px; /* Cartas menores */
-        height: 75px;
+        width: 90%;
+        max-width: 80px;
     }
-}
-
-/* Centralizar o título e ajustar a margem */
-.game-title {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-    text-align: center;
-    color: #fff;
-}
-
-/* Botão de voltar e timer */
-.back-button {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 50px;
-    height: auto;
-}
-
-.timer {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 1.5rem;
-    color: #fff;
 }
 
 </style>
