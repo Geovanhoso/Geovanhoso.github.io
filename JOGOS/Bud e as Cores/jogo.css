@@ -241,7 +241,6 @@ body {
     max-width: 190px;
     height: auto;
 }
-
 /* Contêiner de cores */
 .colors-container {
     position: absolute;
@@ -254,8 +253,8 @@ body {
 }
 
 .palette {
-    width: 750px;
-    height: 100px;
+    width: 60%; /* Diminuir a largura da paleta, em relação ao tamanho da tela */
+    height: 80px; /* Mantém a altura fixa ou ajustada conforme necessário */
     display: flex;
     border-radius: 15px;
     background: linear-gradient(to right, #8B4726, #8B4513, #8B4513, #8B4726, #8B4726);
@@ -265,18 +264,14 @@ body {
 }
 
 .color {
-    width: 80px;
-    height: 80px;
+    width: 60px; /* Diminuir a largura das cores proporcionalmente */
+    height: 60px; /* Diminuir a altura das cores proporcionalmente */
     border-radius: 50%;
     cursor: pointer;
     transition: transform 0.3s ease;
 }
 
-.colors {
-    display: flex;
-    gap: 5px;
-}
-
+/* Efeito de hover */
 .color:hover {
     transform: scale(1.1);
 }
@@ -285,10 +280,10 @@ body {
     animation: shake 0.5s;
 }
 
-/* Cores da fruta */
+/* Ajustando o comportamento da fruta */
 #fruit-image {
-    width: 20vw;
-    max-width: 150px;
+    width: 15vw;  /* Ajuste proporcional ao tamanho da tela */
+    max-width: 120px;
     height: auto;
 }
 
