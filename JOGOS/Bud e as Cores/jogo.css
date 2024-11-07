@@ -198,13 +198,12 @@ body {
     height: auto;
 }
 
-/* Balão de pensamento */
 .thought-bubble {
     position: fixed;
-    top: 150px;
-    left: 50px;
-    width: 150px;
-    height: 120px;
+    top: 150px;           /* Mantenha a posição para cima */
+    right: 300px;          /* Mova o balão para a borda direita da tela */
+    width: 150px;         /* Largura do balão */
+    height: 120px;        /* Altura do balão */
     background: linear-gradient(to right, #d9d9d9, #ffffff);
     border-radius: 30px;
     padding: 15px;
@@ -215,6 +214,7 @@ body {
     justify-content: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
 
 .thought-bubble img {
     width: 50%;    /* Reduz o tamanho da fruta */
