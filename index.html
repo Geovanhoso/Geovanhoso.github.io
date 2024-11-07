@@ -28,21 +28,15 @@
             height: auto;
         }
 
+        /* Organiza os botões verticalmente */
         .button-container {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            flex-direction: column;
             gap: 20px;
             width: 100%;
-            max-width: 1300px;
+            max-width: 500px; /* Ajuste para limitar a largura em telas maiores */
             padding: 0 10px;
-        }
-
-        .column {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            width: 45%;
+            align-items: center; /* Centraliza os botões */
         }
 
         .button {
@@ -54,10 +48,9 @@
             cursor: pointer;
             transition: all 0.3s ease;
             width: 100%;
-            height: auto;
-            line-height: 1.5;
             text-align: center;
             text-decoration: none;
+            background-color: #555; /* Cor de fundo padrão */
         }
 
         .button1 { background-color: #fc4545; }
@@ -87,29 +80,6 @@
             height: 100%;
             object-fit: cover;
         }
-
-        /* Responsividade para modo paisagem em telas menores */
-        @media (max-width: 768px) and (orientation: landscape) {
-            .button-container {
-                flex-direction: row;
-                flex-wrap: nowrap;
-                gap: 10px;
-            }
-
-            .column {
-                flex-direction: row;
-                width: auto;
-                gap: 10px;
-            }
-
-            .button {
-                padding: 15px;
-                font-size: 1.4rem;
-                line-height: 1.4;
-                width: auto;
-                flex: 1; /* Distribui igualmente o espaço */
-            }
-        }
     </style>
 </head>
 <body>
@@ -117,22 +87,18 @@
     <img src="titulo.png" alt="Cooking Yummy" class="titulo-img">
 
     <div class="button-container">
-        <div class="column">
-            <a href="#" class="button button1" onclick="showGif('JOGOS/Bud e as Cores/index.html')">
-                Bud e as Cores
-            </a>
-            <a href="#" class="button button2" onclick="showGif('JOGOS/Encaixe os Alimentos/inicial.html')">
-                Encaixe os Alimentos
-            </a>
-        </div>
-        <div class="column">
-            <a href="#" class="button button3" onclick="showGif('JOGOS/Bud e os Legumes/index1.html')">
-                Bud e os Legumes
-            </a>
-            <a href="#" class="button button4" onclick="showGif('JOGOS/Memoria das Frutas/inicial.html')">
-                Memória das Frutas
-            </a>
-        </div>
+        <a href="#" class="button button1" onclick="showGif('JOGOS/Bud e as Cores/index.html')">
+            Bud e as Cores
+        </a>
+        <a href="#" class="button button2" onclick="showGif('JOGOS/Encaixe os Alimentos/inicial.html')">
+            Encaixe os Alimentos
+        </a>
+        <a href="#" class="button button3" onclick="showGif('JOGOS/Bud e os Legumes/index1.html')">
+            Bud e os Legumes
+        </a>
+        <a href="#" class="button button4" onclick="showGif('JOGOS/Memoria das Frutas/inicial.html')">
+            Memória das Frutas
+        </a>
     </div>
 
     <div class="gif-overlay" id="gifOverlay">
