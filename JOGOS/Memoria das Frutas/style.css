@@ -153,37 +153,38 @@ body {
 
 
         /* Estilos para a tela de parabenização */
-        .congratulations-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-image: url('parabens.png'); /* Imagem de parabenização */
-            background-size: cover; /* Cobre toda a tela */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-        }
+       .congratulations-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('parabens.png'); /* Imagem de parabenização */
+    background-size: cover; /* Cobre toda a tela */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    background-position: center center; /* Centraliza a imagem */
+}
 
-        /* Estilo do botão "Jogar Novamente" */
-        .restart-button {
-            padding: 50px 200px; /* Tamanho do botão */
-            font-size: 2rem; /* Tamanho da fonte */
-            background: linear-gradient(to bottom, #8d249c, #c57b9c); /* Degradê com as novas cores */
-            color: #fff; /* Cor do texto */
-            border: 2px solid white; /* Borda branca */
-            border-radius: 50px; /* Bordas bem arredondadas */
-            cursor: pointer; /* Muda o cursor para indicar que é clicável */
-            transition: background 0.3s ease; /* Transição suave ao passar o mouse */
-            margin-top: 600px; /* Aumenta a margem superior para descer o botão */
-            z-index: 1001; /* Coloca o botão acima da imagem */
-        }
+       /* Estilo do botão "Jogar Novamente" */
+.restart-button {
+    padding: 30px 100px; /* Ajusta o tamanho do botão */
+    font-size: calc(1rem + 2vw); /* Ajusta o tamanho da fonte com base na largura da tela */
+    background: linear-gradient(to bottom, #8d249c, #c57b9c); /* Degradê com as novas cores */
+    color: #fff; /* Cor do texto */
+    border: 2px solid white; /* Borda branca */
+    border-radius: 50px; /* Bordas arredondadas */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    transition: background 0.3s ease; /* Transição suave ao passar o mouse */
+    margin-top: 10vh; /* Ajuste o valor para garantir que o botão não sobreponha a tela */
+    z-index: 1001; /* Coloca o botão acima da imagem */
+}
         
         .restart-button:hover {
-            background: linear-gradient(to bottom, #a84c9d, #d2a6b1); /* Degradê diferente ao passar o mouse */
-        }
+    background: linear-gradient(to bottom, #a84c9d, #d2a6b1); /* Degradê diferente ao passar o mouse */
+}
 
         /* Estilos para o corpo da página */
         body {
