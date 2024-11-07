@@ -200,7 +200,7 @@ body {
 
 .thought-bubble {
     position: fixed;
-    top: 50px;            /* Diminua o valor de 'top' para mover o balão mais para o topo */
+    top: 80px;            /* Diminua o valor de 'top' para mover o balão mais para o topo */
     left: 600px;          /* A posição horizontal pode continuar como estava */
     width: 150px;         /* Largura do balão */
     height: 120px;        /* Altura do balão */
