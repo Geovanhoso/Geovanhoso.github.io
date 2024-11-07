@@ -151,39 +151,52 @@ body {
 
 
 
-
-        /* Estilos para a tela de parabenização */
-       .congratulations-screen {
+/* Estilos para a tela de parabenização */
+.congratulations-screen {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100vw; /* Garantir que ocupe 100% da largura da tela */
+    height: 100vh; /* Garantir que ocupe 100% da altura da tela */
     background-image: url('parabens.png'); /* Imagem de parabenização */
     background-size: cover; /* Cobre toda a tela */
+    background-position: center; /* Centraliza a imagem de fundo */
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1000;
-    background-position: center center; /* Centraliza a imagem */
+    overflow: hidden; /* Evitar rolagem */
 }
 
-       /* Estilo do botão "Jogar Novamente" */
+/* Estilo do botão "Jogar Novamente" */
 .restart-button {
-    padding: 30px 100px; /* Ajusta o tamanho do botão */
-    font-size: calc(1rem + 2vw); /* Ajusta o tamanho da fonte com base na largura da tela */
+    padding: 50px 200px; /* Tamanho do botão */
+    font-size: 2rem; /* Tamanho da fonte */
     background: linear-gradient(to bottom, #8d249c, #c57b9c); /* Degradê com as novas cores */
     color: #fff; /* Cor do texto */
     border: 2px solid white; /* Borda branca */
-    border-radius: 50px; /* Bordas arredondadas */
+    border-radius: 50px; /* Bordas bem arredondadas */
     cursor: pointer; /* Muda o cursor para indicar que é clicável */
     transition: background 0.3s ease; /* Transição suave ao passar o mouse */
-    margin-top: 10vh; /* Ajuste o valor para garantir que o botão não sobreponha a tela */
+    margin-top: 600px; /* Aumenta a margem superior para descer o botão */
     z-index: 1001; /* Coloca o botão acima da imagem */
 }
-        
-        .restart-button:hover {
-    background: linear-gradient(to bottom, #a84c9d, #d2a6b1); /* Degradê diferente ao passar o mouse */
+
+/* Estilo para o título da tela de parabenização */
+.congratulations-screen h1 {
+    font-size: 3rem; /* Ajuste o tamanho do título */
+    color: #fff;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra para melhorar a visibilidade */
+    margin-bottom: 20px;
+}
+
+/* Estilo para o texto de parabenização */
+.congratulations-screen p {
+    font-size: 1.5rem; /* Ajuste o tamanho do texto */
+    color: #fff;
+    text-align: center;
+    margin-top: 10px;
 }
 
         /* Estilos para o corpo da página */
