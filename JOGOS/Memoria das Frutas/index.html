@@ -60,7 +60,7 @@
     
             .game-board {
                 display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Ajusta o tamanho das cartas */
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Aumenta o tamanho das cartas na horizontal */
                 gap: 10px;
                 justify-items: center;
                 width: 100%;
@@ -83,10 +83,11 @@
                 height: 50px;
             }
     
-            /* Ajuste no tamanho das cartas - diminui o tamanho */
+            /* Ajuste no tamanho das cartas - aumenta a largura sem mexer na altura */
             .card {
-                width: 60%;  /* Diminui o tamanho das cartas em relação à largura da tela */
-                max-width: 75px; /* Limita o tamanho das cartas */
+                width: 70%;  /* Aumenta a largura das cartas */
+                max-width: 100px; /* Limita o tamanho máximo das cartas */
+                height: auto; /* Mantém a altura proporcional */
             }
         }
     
