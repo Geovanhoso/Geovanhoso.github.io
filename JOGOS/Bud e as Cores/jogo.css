@@ -200,7 +200,7 @@ body {
 
 .thought-bubble {
     position: fixed;
-    top: 100px;            /* Diminua o valor de 'top' para mover o balão mais para o topo */
+    top: 130px;            /* Diminua o valor de 'top' para mover o balão mais para o topo */
     left: 600px;          /* A posição horizontal pode continuar como estava */
     width: 150px;         /* Largura do balão */
     height: 120px;        /* Altura do balão */
@@ -241,16 +241,17 @@ body {
     max-width: 190px;
     height: auto;
 }
-/* Contêiner de cores */
 .colors-container {
     position: absolute;
-    bottom: 1%;
+    bottom: 10%;       /* Aumente o valor de 'bottom' para descer mais a paleta */
     left: 0;
     right: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 80%;        /* Largura da paleta */
 }
+
 
 .palette {
     width: 60%; /* Diminuir a largura da paleta, em relação ao tamanho da tela */
