@@ -4,97 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>facil</title>
-    <style>
-/* Geral - Configurações padrão */
-body {
-    font-family: 'Chewy', sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-}
-
-.game-title {
-    font-size: 0.6rem; /* Tamanho bem menor para o título */
-    margin: 20px;
-    width: 60px; /* Reduz a largura do título */
-    height: 60px; /* Reduz a altura do título */
-    line-height: 60px; /* Centraliza o texto verticalmente */
-    text-align: center; /* Centraliza o texto horizontalmente */
-    background-color: #f1f1f1; /* Cor de fundo (opcional) */
-    border-radius: 10px; /* Bordas arredondadas (opcional) */
-    display: inline-block; /* Faz o título se comportar como um quadrado */
-}
-
-/* Contêiner do Jogo */
-.game-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Tamanho das Cartas */
-.card {
-    width: 80%;
-    max-width: 120px; /* Ajuste para o tamanho ideal das cartas */
-    height: auto;
-    margin: 10px;
-    transition: transform 0.3s ease;
-}
-
-/* Ajuste para o modo paisagem */
-@media (orientation: landscape) {
-    .game-title {
-        font-size: 0.5rem; /* Tamanho ainda menor no modo paisagem */
-        margin: 10px 0;
-        width: 50px; /* Ajusta a largura no modo paisagem */
-        height: 50px; /* Ajusta a altura no modo paisagem */
-        line-height: 50px; /* Ajusta o alinhamento vertical */
-    }
-
-    .card {
-        width: 70%;
-        max-width: 100px; /* Reduz o tamanho das cartas */
-        margin: 5px;
-    }
-
-    .game-board {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-        gap: 10px;
-        justify-items: center;
-        width: 100%;
-    }
-
-    .game-container {
-        padding: 10px;
-    }
-}
-
-/* Ajustes para telas menores no modo retrato */
-@media (max-width: 768px) {
-    .game-title {
-        font-size: 1rem;
-    }
-
-    .card {
-        width: 90%;
-        max-width: 80px;
-    }
-}
-
-    </style>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="styles.css"> <!-- Adicione a folha de estilos do botão -->
     <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chewy&display=swap">
+    <style>
+        /* Geral - Configurações padrão */
+        body {
+            font-family: 'Chewy', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+
+        .game-title {
+            font-size: 2rem; /* Tamanho padrão para o título */
+            margin: 20px;
+        }
+
+        /* Contêiner do Jogo */
+        .game-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Ajustes para o modo paisagem */
+        @media (orientation: landscape) {
+            .game-title {
+                font-size: 1.5rem; /* Reduzir o tamanho da fonte no modo paisagem */
+                margin: 10px 0; /* Ajusta as margens */
+            }
+
+            .game-board {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                gap: 10px;
+                justify-items: center;
+                width: 100%;
+            }
+
+            .game-container {
+                padding: 10px;
+            }
+        }
+
+        /* Ajustes para telas menores no modo retrato */
+        @media (max-width: 768px) {
+            .game-title {
+                font-size: 1.5rem;
+            }
+
+            .card {
+                width: 90%;
+                max-width: 80px;
+            }
+        }
+    </style>
 </head>
 <body>
 <div class="confirmation-screen" id="confirmationScreen" style="display: none;">
     <div class="confirmation-content">
-        <img src="images/sair.png" alt="Deseja sair?" style="width: 500px; height: auto;"> 
+        <img src="images/sair.png" alt="Deseja sair?" style="width: 500px; height: auto;">
         <div class="button-container">
             <img id="confirmYes" src="images/Sim.png" alt="Sim" onclick="confirmYes()">
             <img id="confirmNo" src="images/Nao.png" alt="Não" onclick="confirmNo()">
