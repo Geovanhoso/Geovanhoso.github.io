@@ -201,10 +201,10 @@ body {
 /* Balão de pensamento */
 .thought-bubble {
     position: fixed;
-    top: 200px;
-    right: 400px;
-    width: 300px;
-    height: 200px;
+    top: 200px;           /* Posiciona a partir do topo */
+    left: 50px;           /* Ajusta o balão para a esquerda (diminui o valor de left) */
+    width: 200px;         /* Reduz a largura do balão */
+    height: 150px;        /* Reduz a altura do balão */
     background: linear-gradient(to right, #d9d9d9, #ffffff);
     border-radius: 30px;
     padding: 20px;
@@ -215,6 +215,7 @@ body {
     justify-content: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
 
 .thought-bubble img {
     width: 80%;
