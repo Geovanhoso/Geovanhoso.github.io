@@ -1,0 +1,59 @@
+/* Arquivo: responsive.css */
+
+/* Ajustes para Tablets */
+@media (max-width: 1024px) {
+    .game-title {
+        font-size: calc(1.2em + 1vw); /* Ajusta o tamanho da fonte */
+    }
+
+    .game-board {
+        grid-gap: 1px; /* Mantém o espaçamento entre as cartas */
+    }
+
+    .end-screen-content {
+        width: 85vw; /* Ajusta a largura máxima */
+        max-width: 500px;
+    }
+}
+
+/* Ajustes para Celulares */
+@media (max-width: 768px) {
+    .game-title {
+        font-size: calc(1em + 1vw); /* Ajusta o tamanho da fonte */
+    }
+
+    .game-board {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas menores */
+    }
+
+    .end-screen-content {
+        width: 90vw; /* Ajusta a largura máxima */
+        max-width: 400px;
+    }
+
+    .card {
+        width: 90%; /* Ajusta a largura das cartas */
+        padding-bottom: 90%; /* Proporção quadrada */
+    }
+}
+
+/* Ajustes para Dispositivos Menores */
+@media (max-width: 480px) {
+    .game-title {
+        font-size: calc(0.75em + 1vw); /* Ajusta o tamanho da fonte */
+    }
+
+    .game-board {
+        grid-template-columns: 1fr; /* 1 coluna em dispositivos menores */
+    }
+
+    .end-screen-content {
+        width: 90vw; /* Ajusta a largura máxima */
+        max-width: 300px;
+    }
+
+    .card {
+        width: 100%; /* Ajusta a largura das cartas para preencher toda a coluna */
+        padding-bottom: 100%;
+    }
+}
