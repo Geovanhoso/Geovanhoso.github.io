@@ -50,6 +50,7 @@
             text-align: center;
             text-decoration: none;
             background-color: #555;
+            will-change: transform;
         }
 
         .button1 { background-color: #fc4545; }
@@ -59,6 +60,11 @@
 
         .button:hover {
             transform: scale(1.05);
+        }
+
+        .button:focus {
+            outline: 2px solid #fc4545;
+            outline-offset: 4px;
         }
 
         .gif-overlay {
@@ -80,7 +86,47 @@
             object-fit: cover;
         }
 
-        /* Ajustes adicionais para telas menores */
+        /* Estilo para o modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            color: #000;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 80%;
+            max-width: 400px;
+        }
+
+        .modal .modal-content h2 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .modal .modal-content .button {
+            background-color: #70c732;
+            color: white;
+            font-size: 1rem;
+            padding: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            border: none;
+            text-decoration: none;
+        }
+
+        /* Responsividade */
         @media (max-width: 768px) {
             .titulo-img {
                 max-width: 70%;
@@ -101,10 +147,10 @@
         <a href="#" class="button button1" onclick="showGif('JOGOS/Bud e as Cores/index.html')">
             Bud e as Cores
         </a>
-        <a href="#" class="button button2" onclick="showGif('JOGOS/Encaixe os Alimentos/inicial.html')">
+        <a href="#" class="button button2" onclick="showModal('encaixe')">
             Encaixe os Alimentos
         </a>
-        <a href="#" class="button button3" onclick="showGif('JOGOS/Bud e os Legumes/index1.html')">
+        <a href="#" class="button button3" onclick="showModal('bud')">
             Bud e os Legumes
         </a>
         <a href="#" class="button button4" onclick="showGif('JOGOS/Memoria das Frutas/inicial.html')">
@@ -116,6 +162,14 @@
         <img src="carregamento.gif" alt="Carregando...">
     </div>
 
+    <!-- Modal de mensagem -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <h2 id="modal-message">Disponível na próxima atualização</h2>
+            <button class="button" onclick="closeModal()">OK</button>
+        </div>
+    </div>
+
     <script>
         function showGif(url) {
             const gifOverlay = document.getElementById('gifOverlay');
@@ -124,6 +178,26 @@
             setTimeout(function() {
                 window.location.href = url;
             }, 500);
+        }
+
+        function showModal(game) {
+            // Define a mensagem no modal dependendo do jogo
+            const message = game === 'encaixe' 
+                ? 'Disponível na próxima atualização'
+                : 'Disponível na próxima atualização';
+
+            // Atualiza a mensagem no modal
+            document.getElementById('modal-message').innerText = message;
+
+            // Exibe o modal
+            const modal = document.getElementById('modal');
+            modal.style.display = 'flex';
+        }
+
+        function closeModal() {
+            // Fecha o modal
+            const modal = document.getElementById('modal');
+            modal.style.display = 'none';
         }
     </script>
 
