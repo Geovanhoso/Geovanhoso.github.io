@@ -201,13 +201,13 @@ body {
 /* Balão de pensamento */
 .thought-bubble {
     position: fixed;
-    top: 200px;           /* Posiciona a partir do topo */
-    left: 50px;           /* Ajusta o balão para a esquerda (diminui o valor de left) */
-    width: 200px;         /* Reduz a largura do balão */
-    height: 150px;        /* Reduz a altura do balão */
+    top: 150px;           /* Reduzi o valor de top para mover mais para cima */
+    left: 50px;           /* Mantém o valor para manter o balão na esquerda */
+    width: 150px;         /* Reduz ainda mais a largura do balão */
+    height: 120px;        /* Reduz ainda mais a altura do balão */
     background: linear-gradient(to right, #d9d9d9, #ffffff);
     border-radius: 30px;
-    padding: 20px;
+    padding: 15px;        /* Diminui o padding para ficar proporcional ao tamanho */
     text-align: center;
     z-index: 2;
     display: flex;
