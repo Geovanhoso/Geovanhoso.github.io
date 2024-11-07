@@ -19,13 +19,13 @@
             padding: 0;
             height: 100vh;
         }
-    
+
         /* Título do jogo */
         .game-title {
             font-size: 2rem; /* Tamanho padrão para o título */
             margin: 20px;
         }
-    
+
         /* Estilo para o botão de voltar */
         .back-button {
             position: absolute; /* Posiciona o botão fora do fluxo normal */
@@ -37,27 +37,27 @@
             cursor: pointer;
             z-index: 10; /* Garante que o botão fique sobre os outros elementos */
         }
-    
+
         /* Contêiner do Jogo */
         .game-container {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-    
+
         /* Ajustes para o modo paisagem */
         @media (orientation: landscape) {
             .game-title {
                 font-size: 1.5rem; /* Reduzir o tamanho da fonte no modo paisagem */
                 margin: 10px 0; /* Ajusta as margens */
             }
-    
+
             .back-button {
                 font-size: 1.8rem; /* Reduz o tamanho do botão no modo paisagem */
                 width: 50px; /* Ajusta o tamanho do botão no modo paisagem */
                 height: 50px;
             }
-    
+
             .game-board {
                 display: grid;
                 grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Aumenta o tamanho das cartas na horizontal */
@@ -65,24 +65,24 @@
                 justify-items: center;
                 width: 100%;
             }
-    
+
             .game-container {
                 padding: 10px;
             }
         }
-    
+
         /* Ajustes para telas menores no modo retrato */
         @media (max-width: 768px) {
             .game-title {
                 font-size: 1.5rem;
             }
-    
+
             .back-button {
                 font-size: 1.8rem; /* Tamanho aumentado do botão para telas menores */
                 width: 50px; /* Aumenta o tamanho do botão para telas pequenas */
                 height: 50px;
             }
-    
+
             /* Ajuste no tamanho das cartas - aumenta um pouco a largura sem mexer na altura */
             .card {
                 width: 120%;  /* Aumenta um pouco a largura das cartas */
@@ -90,18 +90,66 @@
                 height: 30px; /* Aumenta um pouco a altura das cartas */
             }
         }
-    
+
         /* Ajuste para o grid das cartas */
         .game-board {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Garante 4 colunas */
-    gap: 21px; /* Ajuste o espaçamento entre as cartas para 10px */
-    justify-items: center;
-    margin: 0 auto; /* Centraliza o conteúdo */
-}
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* Garante 4 colunas */
+            gap: 21px; /* Ajuste o espaçamento entre as cartas para 10px */
+            justify-items: center;
+            margin: 0 auto; /* Centraliza o conteúdo */
+        }
+
+        /* Tela de Parabenização */
+        .congratulations-screen {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            max-width: 500px; /* Limita a largura máxima para telas grandes */
+            margin: 0 auto;
+        }
+
+        .congratulations-screen img {
+            width: 80%; /* A imagem ocupa 80% da largura da tela */
+            max-width: 400px; /* Limita a largura máxima da imagem */
+            height: auto; /* Mantém a proporção da imagem */
+        }
+
+        .restart-button {
+            background-color: #4CAF50;
+            color: white;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .restart-button:hover {
+            background-color: #45a049;
+        }
+
+        /* Responsividade - Ajustes para telas pequenas */
+        @media (max-width: 600px) {
+            .congratulations-screen img {
+                width: 90%; /* A imagem ocupa 90% da largura da tela */
+            }
+
+            .restart-button {
+                font-size: 1rem; /* Reduz o tamanho da fonte do botão */
+                padding: 8px 16px; /* Ajusta o tamanho do botão */
+            }
+        }
     </style>
 </head>
 <body>
+
+<!-- Tela de Confirmação para Sair -->
 <div class="confirmation-screen" id="confirmationScreen" style="display: none;">
     <div class="confirmation-content">
         <img src="images/sair.png" alt="Deseja sair?" style="width: 500px; height: auto;">
