@@ -15,8 +15,15 @@ body {
 }
 
 .game-title {
-    font-size: 2rem;
+    font-size: 1rem; /* Tamanho bem menor para o título */
     margin: 20px;
+    width: 100px; /* Define a largura fixa do título */
+    height: 100px; /* Define a altura fixa do título */
+    line-height: 100px; /* Centraliza o texto verticalmente */
+    text-align: center; /* Centraliza o texto horizontalmente */
+    background-color: #f1f1f1; /* Cor de fundo (opcional) */
+    border-radius: 10px; /* Bordas arredondadas (opcional) */
+    display: inline-block; /* Faz o título se comportar como um quadrado */
 }
 
 /* Contêiner do Jogo */
@@ -38,8 +45,11 @@ body {
 /* Ajuste para o modo paisagem */
 @media (orientation: landscape) {
     .game-title {
-        font-size: 1rem; /* Diminui bastante o tamanho do título para modo paisagem */
+        font-size: 0.8rem; /* Reduz ainda mais o tamanho do título no modo paisagem */
         margin: 10px 0;
+        width: 80px; /* Ajusta a largura no modo paisagem */
+        height: 80px; /* Ajusta a altura no modo paisagem */
+        line-height: 80px; /* Ajusta o alinhamento vertical */
     }
 
     .card {
@@ -73,8 +83,7 @@ body {
     }
 }
 
-
-</style>
+    </style>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="styles.css"> <!-- Adicione a folha de estilos do botão -->
     <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
@@ -93,31 +102,23 @@ body {
     </div>
 </div>
 
-
-</div>
-
-        </div>
-    </div>
-</div>
-
-
 <!-- Botão de Voltar -->
 <img src="images/voltar.png" alt="Voltar" class="back-button" onclick="window.location.href='inicial.html'">
 
-    <!-- Temporizador -->
-    <div class="timer" id="timer"></div>
+<!-- Temporizador -->
+<div class="timer" id="timer"></div>
 
-    <!-- Contêiner do Jogo -->
-    <div class="game-container">
-        <div class="game-title">Memória das Frutas-Fácil</div>
-        <div class="game-board" id="gameBoard"></div>
-    </div>
+<!-- Contêiner do Jogo -->
+<div class="game-container">
+    <div class="game-title">Memória das Frutas-Fácil</div>
+    <div class="game-board" id="gameBoard"></div>
+</div>
 
-    <!-- Tela de Parabenização -->
-    <div class="congratulations-screen" id="congratulationsScreen" style="display: none;">
-        <button class="restart-button" onclick="startGame()">Jogar Novamente</button>
-    </div>
+<!-- Tela de Parabenização -->
+<div class="congratulations-screen" id="congratulationsScreen" style="display: none;">
+    <button class="restart-button" onclick="startGame()">Jogar Novamente</button>
+</div>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
