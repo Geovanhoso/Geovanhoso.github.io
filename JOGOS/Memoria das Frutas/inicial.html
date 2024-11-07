@@ -11,7 +11,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center; 
+            justify-content: center;
             height: 100vh;
             margin: 0;
             background-image: url('images/fundo1.png');
@@ -24,74 +24,74 @@
 
         .title {
             font-size: 6vw; /* Usar largura da tela para responsividade */
-            margin-bottom: 30px; 
+            margin-bottom: 30px;
             font-family: 'Chewy', cursive;
-            color: #ffc107; 
+            color: #ffc107;
             text-shadow: 3px 3px 0px #000, -3px -3px 0px #000, 3px -3px 0px #000, -3px 3px 0px #000;
         }
 
         .button {
             padding: 20px; /* Ajustado para responsividade */
             font-size: 2rem; /* Ajustado para responsividade */
-            font-weight: bold; 
-            color: #000; 
-            background: linear-gradient(to right, #ffc107, #ff9800); 
-            border: 3px solid #000; 
-            border-radius: 15px; 
+            font-weight: bold;
+            color: #000;
+            background: linear-gradient(to right, #ffc107, #ff9800);
+            border: 3px solid #000;
+            border-radius: 15px;
             cursor: pointer;
-            margin: 10px 0; 
-            transition: background 0.3s, transform 0.3s; 
+            margin: 10px 0;
+            transition: background 0.3s, transform 0.3s;
             font-family: 'Patrick Hand', cursive;
             width: 100%; /* Faz o botão ocupar toda a largura disponível */
             max-width: 300px; /* Limita a largura máxima dos botões */
         }
 
         .button:hover {
-            background: linear-gradient(to right, #ff9800, #ffc107); 
+            background: linear-gradient(to right, #ff9800, #ffc107);
             transform: scale(1.05); /* Um pouco menor do que antes */
         }
 
         .modal {
-            display: none; 
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%; 
-            height: 100%; 
-            background-color: rgba(0, 0, 0, 0.8);
-            z-index: 100; 
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            display: flex; 
-            flex-direction: column; /* Para que o botão fique abaixo do vídeo */
-        }
-
-        .overlay {
-            display: none; 
+            display: none;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.7); 
-            z-index: 90; 
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 100;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            display: flex;
+            flex-direction: column; /* Para que o botão fique abaixo do vídeo */
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 90;
         }
 
         #loading {
-            display: none; 
-            position: absolute; 
+            display: none;
+            position: absolute;
             top: 0;
             left: 0;
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover; 
-            z-index: 10; 
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 10;
         }
 
         img, video {
-            max-width: 100%; 
-            height: auto; 
+            max-width: 100%;
+            height: auto;
         }
 
         .skip-image {
@@ -105,21 +105,21 @@
 
         /* Estilo para o botão de voltar com seta */
         .back-arrow-container {
-            position: fixed;  /* Fixa o botão na tela */
-            top: -70px;       /* Ajuste para mover ainda mais para cima */
-            left: -10px;       /* Distância da esquerda */
-            z-index: 10;      /* Certifique-se que o botão esteja acima de outros elementos */
+            position: fixed; /* Fixa o botão na tela */
+            top: -70px; /* Ajuste para mover ainda mais para cima */
+            left: -10px; /* Distância da esquerda */
+            z-index: 10; /* Certifique-se que o botão esteja acima de outros elementos */
         }
 
         .back-arrow-link {
             display: inline-block;
-            text-decoration: none;  /* Remove o sublinhado */
+            text-decoration: none; /* Remove o sublinhado */
         }
 
         .back-arrow {
-            width: 200px;        /* Tamanho maior da seta */
-            height: auto;       /* Mantém a proporção */
-            cursor: pointer;    /* Cursor de ponteiro indicando que é clicável */
+            width: 200px; /* Tamanho maior da seta */
+            height: auto; /* Mantém a proporção */
+            cursor: pointer; /* Cursor de ponteiro indicando que é clicável */
             transition: transform 0.3s ease; /* Adiciona efeito de transição */
         }
 
@@ -142,11 +142,16 @@
         <video id="introVideo" src="TutorialMemoria.mp4" autoplay muted onended="closeModal()"></video>
         <img class="skip-image" src="images/PULAR.png" alt="Pular Tutorial" onclick="closeModal()" />
     </div>
+
     <div class="title">Escolha o Nível</div>
-    <button class="button" onclick="startLoading('index.html')" aria-label="Escolher dificuldade fácil">FÁCIL</button>
-    <button class="button" onclick="startLoading('medio.html')" aria-label="Escolher dificuldade média">MÉDIO</button>
-    <button class="button" onclick="startLoading('dificil.html')" aria-label="Escolher dificuldade difícil">DIFÍCIL</button>
     
+    <!-- Botões de Nível -->
+    <div>
+        <button class="button" onclick="startLoading('index.html')" aria-label="Escolher dificuldade fácil">FÁCIL</button>
+        <button class="button" onclick="startLoading('medio.html')" aria-label="Escolher dificuldade média">MÉDIO</button>
+        <button class="button" onclick="startLoading('dificil.html')" aria-label="Escolher dificuldade difícil">DIFÍCIL</button>
+    </div>
+
     <img id="loading" src="images/carregamento.gif" alt="Carregando..." />
 
     <script>
