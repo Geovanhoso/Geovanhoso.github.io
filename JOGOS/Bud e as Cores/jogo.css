@@ -245,7 +245,7 @@ body {
 }
 .colors-container {
     position: absolute;
-    bottom: 30%;        /* Aumentei o valor de 'bottom' para descer mais a paleta */
+    bottom: 5%;        /* Aumentei o valor de 'bottom' para descer mais a paleta */
     left: 0;
     right: 0;
     display: flex;
