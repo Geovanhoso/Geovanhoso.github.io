@@ -20,9 +20,22 @@
             height: 100vh;
         }
 
+        /* Título do jogo */
         .game-title {
             font-size: 2rem; /* Tamanho padrão para o título */
             margin: 20px;
+        }
+
+        /* Estilo para o botão de voltar */
+        .back-button {
+            position: absolute; /* Posiciona o botão fora do fluxo normal */
+            top: 20px; /* Distância do topo */
+            left: 20px; /* Distância da esquerda */
+            width: auto;
+            height: auto;
+            font-size: 2rem; /* Tamanho igual ao do título */
+            cursor: pointer;
+            z-index: 10; /* Garante que o botão fique sobre os outros elementos */
         }
 
         /* Contêiner do Jogo */
@@ -37,6 +50,10 @@
             .game-title {
                 font-size: 1.5rem; /* Reduzir o tamanho da fonte no modo paisagem */
                 margin: 10px 0; /* Ajusta as margens */
+            }
+
+            .back-button {
+                font-size: 1.5rem; /* Reduz o tamanho do botão no modo paisagem */
             }
 
             .game-board {
@@ -56,6 +73,10 @@
         @media (max-width: 768px) {
             .game-title {
                 font-size: 1.5rem;
+            }
+
+            .back-button {
+                font-size: 1.5rem; /* Tamanho reduzido do botão para telas menores */
             }
 
             .card {
