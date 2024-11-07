@@ -19,76 +19,86 @@
             padding: 0;
             height: 100vh;
         }
-
+    
         /* Título do jogo */
         .game-title {
             font-size: 2rem; /* Tamanho padrão para o título */
             margin: 20px;
         }
-
+    
         /* Estilo para o botão de voltar */
         .back-button {
-        position: absolute; /* Posiciona o botão fora do fluxo normal */
-        top: 10px; /* Distância do topo - ajustado para subir o botão */
-        left: 20px; /* Distância da esquerda */
-        width: 150px; /* Aumenta a largura do botão */
-        height: 150px; /* Aumenta a altura do botão */
-        font-size: 4rem; /* Aumenta o tamanho da fonte */
-        cursor: pointer;
-        z-index: 10; /* Garante que o botão fique sobre os outros elementos */
-    }
-
+            position: absolute; /* Posiciona o botão fora do fluxo normal */
+            top: 5px; /* Distância do topo - ajustado para subir mais */
+            left: 20px; /* Distância da esquerda */
+            width: 150px; /* Aumenta a largura do botão */
+            height: 150px; /* Aumenta a altura do botão */
+            font-size: 4rem; /* Aumenta o tamanho da fonte */
+            cursor: pointer;
+            z-index: 10; /* Garante que o botão fique sobre os outros elementos */
+        }
+    
         /* Contêiner do Jogo */
         .game-container {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-
+    
         /* Ajustes para o modo paisagem */
         @media (orientation: landscape) {
             .game-title {
                 font-size: 1.5rem; /* Reduzir o tamanho da fonte no modo paisagem */
                 margin: 10px 0; /* Ajusta as margens */
             }
-
+    
             .back-button {
                 font-size: 1.8rem; /* Reduz o tamanho do botão no modo paisagem */
                 width: 50px; /* Ajusta o tamanho do botão no modo paisagem */
                 height: 50px;
             }
-
+    
             .game-board {
                 display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Ajusta o tamanho das cartas */
                 gap: 10px;
                 justify-items: center;
                 width: 100%;
             }
-
+    
             .game-container {
                 padding: 10px;
             }
         }
-
+    
         /* Ajustes para telas menores no modo retrato */
         @media (max-width: 768px) {
             .game-title {
                 font-size: 1.5rem;
             }
-
+    
             .back-button {
                 font-size: 1.8rem; /* Tamanho aumentado do botão para telas menores */
                 width: 50px; /* Aumenta o tamanho do botão para telas pequenas */
                 height: 50px;
             }
-
+    
+            /* Ajuste no tamanho das cartas */
             .card {
-                width: 90%;
-                max-width: 80px;
+                width: 80%;
+                max-width: 100px; /* Limita o tamanho das cartas */
             }
         }
+    
+        /* Ajuste para o grid das cartas */
+        .game-board {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Isso vai garantir que as cartas se ajustem bem */
+            gap: 15px; /* Ajuste entre as cartas */
+            justify-items: center;
+        }
     </style>
+    
 </head>
 <body>
 <div class="confirmation-screen" id="confirmationScreen" style="display: none;">
