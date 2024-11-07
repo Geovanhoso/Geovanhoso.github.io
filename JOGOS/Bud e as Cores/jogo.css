@@ -200,13 +200,13 @@ body {
 
 .thought-bubble {
     position: fixed;
-    top: 150px;           /* Mantenha a posição para cima */
-    left: 50px;          /* Mova o balão para a borda direita da tela */
+    top: 50px;            /* Diminua o valor de 'top' para mover o balão mais para o topo */
+    left: 600px;          /* A posição horizontal pode continuar como estava */
     width: 150px;         /* Largura do balão */
     height: 120px;        /* Altura do balão */
     background: linear-gradient(to right, #d9d9d9, #ffffff);
     border-radius: 30px;
-    padding: 15px;
+    padding: 15px;        /* Ajuste o padding conforme necessário */
     text-align: center;
     z-index: 2;
     display: flex;
@@ -214,6 +214,7 @@ body {
     justify-content: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
 
 
 .thought-bubble img {
