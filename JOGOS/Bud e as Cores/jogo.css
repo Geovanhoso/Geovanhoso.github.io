@@ -201,7 +201,7 @@ body {
 .thought-bubble {
     position: fixed;
     top: 150px;           /* Mantenha a posição para cima */
-    right: 50px;          /* Mova o balão para a borda direita da tela */
+    left: 50px;          /* Mova o balão para a borda direita da tela */
     width: 150px;         /* Largura do balão */
     height: 120px;        /* Altura do balão */
     background: linear-gradient(to right, #d9d9d9, #ffffff);
