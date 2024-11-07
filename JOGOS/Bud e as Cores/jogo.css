@@ -50,19 +50,21 @@ body {
         height: auto;
     }
 
-    .food-container {
-        position: absolute;
-        top: 55%; /* Move o alimento mais para o centro */
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 1;
-        width: 30vw; /* Ajusta o tamanho do alimento */
-    }
+.food-container {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    width: 15vw;         /* Reduzido para 15% da largura da tela */
+}
 
-    #food-image {
-        width: 100%; /* Ajusta a largura da imagem do alimento */
-        height: auto;
-    }
+#food-image {
+    width: 100%;
+    max-width: 100px;    /* Limite máximo de 100px para o tamanho da fruta */
+    height: auto;
+}
+
 
 .colors-container {
     position: absolute;
@@ -201,7 +203,7 @@ body {
 .thought-bubble {
     position: fixed;
     top: 130px;            /* Diminua o valor de 'top' para mover o balão mais para o topo */
-    left: 600px;          /* A posição horizontal pode continuar como estava */
+    left: 570px;          /* A posição horizontal pode continuar como estava */
     width: 150px;         /* Largura do balão */
     height: 120px;        /* Altura do balão */
     background: linear-gradient(to right, #d9d9d9, #ffffff);
