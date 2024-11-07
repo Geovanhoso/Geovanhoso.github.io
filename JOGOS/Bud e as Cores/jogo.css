@@ -64,16 +64,15 @@ body {
         height: auto;
     }
 
-    .colors-container {
-        position: absolute;
-        bottom: 5%; /* Ajusta a paleta de cores para a parte inferior */
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 80%; /* Ajusta a largura da paleta */
-    }
+.colors-container {
+    position: absolute;
+    bottom: 5%;  /* Aumente o valor para mover a paleta mais para baixo */
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
     .palette {
         width: 100%;
