@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -19,10 +19,11 @@
             color: #fff;
             font-family: Arial, sans-serif;
             padding: 0 10px; /* Espaçamento lateral */
+            text-align: center; /* Centraliza o texto */
         }
 
         .title {
-            font-size: 6rem;
+            font-size: 6vw; /* Usar largura da tela para responsividade */
             margin-bottom: 30px; 
             font-family: 'Chewy', cursive;
             color: #ffc107; 
@@ -102,30 +103,30 @@
             height: auto; /* Mantém a proporção da imagem */
         }
 
-/* Estilo para o botão de voltar com seta */
-.back-arrow-container {
-    position: fixed;  /* Fixa o botão na tela */
-    top: -70px;       /* Ajuste para mover ainda mais para cima */
-    left: -10px;       /* Distância da esquerda */
-    z-index: 10;      /* Certifique-se que o botão esteja acima de outros elementos */
-}
+        /* Estilo para o botão de voltar com seta */
+        .back-arrow-container {
+            position: fixed;  /* Fixa o botão na tela */
+            top: -70px;       /* Ajuste para mover ainda mais para cima */
+            left: -10px;       /* Distância da esquerda */
+            z-index: 10;      /* Certifique-se que o botão esteja acima de outros elementos */
+        }
 
-.back-arrow-link {
-    display: inline-block;
-    text-decoration: none;  /* Remove o sublinhado */
-}
+        .back-arrow-link {
+            display: inline-block;
+            text-decoration: none;  /* Remove o sublinhado */
+        }
 
-.back-arrow {
-    width: 200px;        /* Tamanho maior da seta */
-    height: auto;       /* Mantém a proporção */
-    cursor: pointer;    /* Cursor de ponteiro indicando que é clicável */
-    transition: transform 0.3s ease; /* Adiciona efeito de transição */
-}
+        .back-arrow {
+            width: 200px;        /* Tamanho maior da seta */
+            height: auto;       /* Mantém a proporção */
+            cursor: pointer;    /* Cursor de ponteiro indicando que é clicável */
+            transition: transform 0.3s ease; /* Adiciona efeito de transição */
+        }
 
-/* Efeito de hover (quando o usuário passa o mouse por cima da seta) */
-.back-arrow:hover {
-    transform: scale(1.1); /* Aumenta um pouco o tamanho da seta */
-}
+        /* Efeito de hover (quando o usuário passa o mouse por cima da seta) */
+        .back-arrow:hover {
+            transform: scale(1.1); /* Aumenta um pouco o tamanho da seta */
+        }
     </style>
 </head>
 <body>
