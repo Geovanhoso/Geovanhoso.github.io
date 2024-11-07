@@ -66,7 +66,7 @@ body {
 
 .colors-container {
     position: absolute;
-    bottom: 30%;  /* Aumente o valor para mover a paleta mais para baixo */
+    bottom: 5%;  /* Aumente o valor para mover a paleta mais para baixo */
     left: 0;
     right: 0;
     display: flex;
@@ -243,37 +243,32 @@ body {
 }
 .colors-container {
     position: absolute;
-    bottom: 10%;       /* Aumente o valor de 'bottom' para descer mais a paleta */
+    bottom: 30%;        /* Mantém a paleta um pouco mais para baixo */
     left: 0;
     right: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80%;        /* Largura da paleta */
+    width: 90%;         /* Aumenta a largura da paleta para 90% da tela */
 }
 
-
 .palette {
-    width: 60%; /* Diminuir a largura da paleta, em relação ao tamanho da tela */
-    height: 80px; /* Mantém a altura fixa ou ajustada conforme necessário */
+    width: 100%;        /* A largura da paleta agora ocupa toda a área disponível */
+    height: 60px;       /* Diminui a altura da paleta */
     display: flex;
+    justify-content: space-around;
     border-radius: 15px;
     background: linear-gradient(to right, #8B4726, #8B4513, #8B4513, #8B4726, #8B4726);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    align-items: center;
-    justify-content: space-around;
 }
 
 .color {
-    width: 8vw;  /* 8% da largura da tela */
-    height: 8vw; /* A altura vai acompanhar a largura */
+    width: 50px;        /* Diminui o tamanho das cores */
+    height: 50px;       /* Diminui o tamanho das cores */
     border-radius: 50%;
     cursor: pointer;
     transition: transform 0.3s ease;
 }
-
-
-
 
 /* Efeito de hover */
 .color:hover {
