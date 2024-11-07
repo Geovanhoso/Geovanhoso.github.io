@@ -264,12 +264,15 @@ body {
 }
 
 .color {
-    width: 60px; /* Diminuir a largura das cores proporcionalmente */
-    height: 60px; /* Diminuir a altura das cores proporcionalmente */
+    width: 8vw;  /* 8% da largura da tela */
+    height: 8vw; /* A altura vai acompanhar a largura */
     border-radius: 50%;
     cursor: pointer;
     transition: transform 0.3s ease;
 }
+
+
+
 
 /* Efeito de hover */
 .color:hover {
