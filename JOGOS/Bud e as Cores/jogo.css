@@ -245,7 +245,7 @@ body {
 }
 .colors-container {
     position: absolute;
-    bottom: 15%;        /* Aumentei o valor de 'bottom' para descer mais a paleta */
+    bottom: 30%;        /* Aumentei o valor de 'bottom' para descer mais a paleta */
     left: 0;
     right: 0;
     display: flex;
@@ -256,7 +256,7 @@ body {
 
 .palette {
     width: 100%;        /* A largura da paleta agora ocupa toda a área disponível */
-    height: 10px;       /* A altura da paleta */
+    height: 58px;       /* A altura da paleta */
     display: flex;
     justify-content: space-around;
     border-radius: 15px;
