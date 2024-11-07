@@ -1,0 +1,385 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    background-color: #f0f0f0;
+    overflow: hidden;
+}
+
+/* Contêiner do título */
+#title-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    top: -30px;
+    width: 120%;
+}
+
+/* Contêiner do jogo */
+#game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('FUNDO1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 2px solid #000;
+    overflow: hidden; /* Garante que nada saia do contêiner */
+}
+
+/* Imagem do título do jogo */
+#game-title {
+    max-width: 90%; /* Ajusta a largura máxima da imagem do título */
+    height: auto;   /* Mantém a proporção da altura */
+    width: 60%;    /* Faz a imagem ocupar 100% da largura disponível */
+}
+
+
+/* Canvas do jogo */
+#game-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Pontuação - Oculta da tela */
+#score {
+    display: none; /* Remove o elemento da tela, mantendo-o no DOM */
+}
+
+
+/* Partículas */
+#particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden; /* Garante que os confetes não saiam do contêiner */
+}
+
+.confete {
+    z-index: 1; /* valor baixo para ficar atrás da tela de parabenização */
+    position: absolute;
+    pointer-events: none; /* Para evitar interações com os confetes */
+    border-radius: 50%; /* Para círculos */
+}
+
+.rectangle {
+    width: 30px; /* Forma retangular */
+    height: 10px;
+}
+
+
+/* Frutas e contêiner de frutas */
+#fruits-container {
+    position: absolute;
+    bottom: 0; /* Posiciona as frutas na parte inferior */
+    left: 0;   /* Posiciona as frutas na parte esquerda */
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden; /* Garante que as frutas não ultrapassem o contêiner */
+}
+
+.fruit {
+    position: absolute;
+    background-size: cover;
+    cursor: pointer;
+    pointer-events: auto;
+    width: 7vw; /* Ajustado para tamanho responsivo */
+    height: 7vw; /* Ajustado para tamanho responsivo */
+    max-width: 7vw; /* Limita a largura máxima */
+    max-height: 7vw; /* Limita a altura máxima */
+    box-sizing: border-box; /* Inclui padding e border no cálculo da largura e altura */
+}
+
+
+/* Contêiner do palhaço */
+#clown-container {
+    position: relative;
+    width: 100%;
+    height: 25vh; /* Ajuste para manter a proporção */
+}
+
+#clown {
+    position: absolute;
+    width: 17vw; /* Aumentado para um tamanho maior em telas grandes */
+    height: auto; /* Manter a proporção da imagem */
+}
+
+#end-screen {
+    position: fixed;
+    top: 0; /* Preenche toda a altura */
+    left: 0; /* Preenche toda a largura */
+    width: 100vw; /* Preenche toda a largura da tela */
+    height: 100vh; /* Preenche toda a altura da tela */
+    background: url('parabenização.jpg') no-repeat center center; /* Define a imagem como fundo */
+    background-size: cover; /* Cobre toda a tela */
+    display: flex; /* Usado para centralizar o conteúdo */
+    flex-direction: column; /* Coloca os filhos em coluna */
+    justify-content: flex-end; /* Alinha os filhos ao fundo da tela */
+    align-items: center; /* Centraliza os filhos horizontalmente */
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+}
+
+
+#end-screen img { /* Substitua pelo seletor correto se necessário */
+    max-width: 100%; /* Ajuste o tamanho conforme necessário */
+    height: auto; /* Mantém a proporção */
+}
+
+#end-screen-content {
+    padding: 20px; /* Ajuste o padding para reduzir o espaço interno */
+    border-radius: 20px;
+    text-align: center;
+    font-family: 'Comic Sans MS';
+    max-width: 100%; /* Limite a largura máxima */
+    transform: scale(1); /* Remova a escala para evitar aumento de tamanho */
+    width: 100%; /* Largura */
+    max-width: 100%; /* Largura máxima */
+    height: 100%; /* Diminui a altura da tela branca */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+        margin-bottom: -280px; /* Espaço abaixo do botão */
+}
+
+
+#end-screen p {
+    font-size: 1.5em;
+}
+
+#play-again-button {
+    font-family: 'Patrick Hand', cursive;
+    padding: 20px 40px; /* Espaçamento */
+    font-size: 2rem; /* Tamanho da fonte */
+    background: linear-gradient(to bottom, #8d249c, #c57b9c); /* Degradê com as novas cores */
+    color: #fff; /* Cor do texto */
+    border: 2px solid white; /* Borda branca */
+    border-radius: 50px; /* Bordas bem arredondadas */
+    cursor: pointer; /* Muda o cursor */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra */
+    transition: background 0.3s, transform 0.3s; /* Transições suaves */
+    text-align: center; /* Centraliza o texto */
+}
+
+#play-again-button:hover {
+    background: linear-gradient(to bottom, #a84c9d, #d2a6b1); /* Degradê diferente ao passar o mouse */
+    transform: scale(1.05); /* Aumenta ao passar o mouse */
+}
+
+#end-screen.hidden {
+    display: none;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(0.5);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+/* botao de voltar */
+#return-link {
+    position: absolute;
+    top: -65px; /* Distância do topo da tela */
+    left: -20px; /* Distância da borda esquerda */
+    z-index: 1000; /* Fica acima de outros elementos */
+    border: 1px dashed rgba(0, 0, 0, 0.0); /* Borda visível ao redor do contêiner */
+    padding: -1px; /* Mantido para a área clicável */
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+/* Estilo da imagem do botão de voltar */
+#return-button {
+    width: 100%; /* Ocupa 100% da largura do contêiner */
+    max-width: 200px; /* Limite máximo para telas grandes */
+    height: auto; /* Mantém a proporção da imagem */
+    cursor: pointer; /* Muda o cursor ao passar sobre a imagem */
+    transform: scale(1.2); /* Aumenta a imagem em 20% */
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 600px) {
+    #return-button {
+        width: 35vw; /* Aumenta a largura em telas menores */
+        max-width: 150px; /* Ajusta o limite máximo */
+    }
+}
+
+
+/* Tela de seleção de níveis */
+#level-selection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza o conteúdo verticalmente */
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    padding: 40px 20px; /* Adiciona um padding superior para um pouco de espaço do topo */
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%; /* Ocupa 100% da largura da tela */
+    margin: auto;
+    background-image: url('FUNDO.jpg'); 
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    gap: 17px; /* Espaço maior entre os botões */
+
+}
+
+/* Ajusta o título */
+#level-selection h1 {
+    font-family: 'Chewy', cursive;
+    font-size: 5rem; /* Aumenta ainda mais o tamanho do título */
+    color: #FFD700; /* Amarelo controlado */
+    margin-bottom: 40px; /* Espaço abaixo do título */
+    position: relative;
+    text-shadow: 
+        3px 3px 0 #000000, /* Contorno preto mais grosso */
+        -3px -3px 0 #000000, /* Contorno preto mais grosso */
+        3px -3px 0 #000000, /* Contorno preto mais grosso */
+        -3px 3px 0 #000000; /* Contorno preto mais grosso */
+
+}
+
+
+
+/* Botões */
+.level-button {
+    background: linear-gradient(135deg, #FFD700, #FFA500); /* Degradê amarelo */
+    border: 3px solid #000000; /* Borda preta */
+    color: #000000; /* Texto preto para contraste */
+    padding: 25px 60px; /* Aumenta o tamanho horizontal e vertical dos botões */
+    font-size: 2rem; /* Fonte ajustada para melhor visibilidade */
+    cursor: pointer;
+    border-radius: 15px; /* Bordas arredondadas */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Sombra para destacar o botão */
+    transition: background 0.3s, color 0.3s, transform 0.2s, box-shadow 0.3s;
+    width: 450px; /* Largura ajustada para botões */
+    height: 100px; /* Altura ajustada para botões */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold; /* Texto em negrito */
+    cursor: pointer; /* Cursor em forma de mão ao passar o mouse */
+    transition: background-color 0.3s; /* Transição suave para o fundo */
+    font-family: 'Patrick Hand', cursive;
+    font-size: 30px; /* Ajuste o tamanho conforme necessário */
+    
+}
+
+.level-button:hover {
+    background: linear-gradient(135deg, #FFA500, #FFD700); /* Inverte o degradê ao passar o mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Aumenta a sombra ao passar o mouse */
+    transform: scale(1.05); /* Efeito de zoom */
+}
+
+/*tela de sair ou ficar*/
+#exit-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; /* Largura responsiva */
+    max-width: 600px; /* Limite máximo */
+    background-image: url('fundosimnao.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    padding: 20px; /* Adiciona padding */
+}
+
+#exit-image {
+    max-width: 75%; /* Ajusta a largura máxima da imagem "Deseja sair?" */
+    height: auto; /* Mantém a proporção */
+    margin-bottom: 20px; /* Espaço abaixo da imagem */
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; /* Centraliza os botões */
+    gap: 20px; /* Ajuste o espaço entre os botões conforme necessário */
+    width: 80%; /* Largura do contêiner dos botões */
+    margin-top: -24px; /* Espaço acima dos botões */
+}
+
+.button-container img {
+    width: 70%; /* Aumenta o tamanho das imagens dos botões */
+    max-width: 300px; /* Limite máximo para telas grandes */
+    cursor: pointer; /* Muda o cursor ao passar sobre a imagem */
+    transition: transform 0.3s; /* Suave transição ao passar o mouse */
+}
+
+#exit-modal.hidden {
+    display: none; /* Oculta o modal */
+}
+
+
+/* Estilo da imagem do título "Deseja sair?" */
+#exit-title {
+    max-width: 60%; /* Largura máxima ajustável */
+    height: auto; /* Mantém a proporção */
+    margin-bottom: 20px; /* Espaço abaixo da imagem */
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Cor preta com opacidade */
+    backdrop-filter: blur(5px); /* Efeito de desfoque */
+    z-index: 999; /* Garantir que fique acima de outros elementos */
+    display: none; /* Inicialmente escondido */
+}
+
+#overlay.visible {
+    display: block; /* Exibir quando necessário */
+}
+
+
+
+.button-container button:hover {
+    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+    opacity: 0.9; /* Leve desbotamento */
+}
+
+
+
+#overlay.visible {
+    display: block; /* Exibir quando necessário */
+}
