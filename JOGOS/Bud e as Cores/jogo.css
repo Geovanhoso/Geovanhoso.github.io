@@ -256,7 +256,7 @@ body {
 
 .palette {
     width: 100%;        /* A largura da paleta agora ocupa toda a área disponível */
-    height: 30px;       /* A altura da paleta */
+    height: 10px;       /* A altura da paleta */
     display: flex;
     justify-content: space-around;
     border-radius: 15px;
