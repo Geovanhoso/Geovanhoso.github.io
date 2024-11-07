@@ -1,0 +1,407 @@
+/* Estilo para o corpo da página */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-image: url('images/fundo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* Impede a rolagem */
+}
+
+/* Estilo para o título do jogo */
+.game-title {
+    font-size: calc(1.5em + 1vw); /* Ajusta o tamanho da fonte com base no tamanho da tela */
+    margin: 0;
+    padding: 20px;
+    font-family: 'Comic Sans MS', cursive;
+    color: #FFD700;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+    text-align: center;
+}
+
+/* Estilo para o tabuleiro de jogo */
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 colunas fixas */
+    grid-gap: 1px; /* Diminui ainda mais o espaçamento entre as cartas */
+    justify-content: center;
+    margin-top: 20px; /* Espaço acima do tabuleiro */
+    width: 90vw; /* Largura do tabuleiro */
+    max-width: 800px; /* Largura máxima do tabuleiro */
+    margin-left: 100px; /* Aumenta a margem esquerda para mover o tabuleiro mais para a direita */
+}
+
+/* Estilo para as cartas */
+.card {
+    width: 80%; /* Reduz ainda mais a largura das cartas */
+    height: 0; /* Altura inicial zero para controlar com padding */
+    padding-bottom: 80%; /* Ajusta o aspecto quadrado (altura igual à largura) */
+    background-color: transparent; /* Torna o fundo transparente para mostrar a imagem de fundo */
+    border: 6px solid white;
+    cursor: pointer;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s, border-color 0.3s;
+    border-radius: 15px;
+}
+
+/* Estilo para a parte frontal da carta */
+.card .front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em; /* Tamanho da fonte */
+    font-weight: bold;
+    border-radius: 15px;
+    background-color: #ffffff;
+    background-size: cover;
+    transform: rotateY(180deg);
+}
+
+/* Estilo para a parte traseira da carta */
+.card .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em; /* Tamanho da fonte */
+    font-weight: bold;
+    border-radius: 15px;
+    background-image: url('images/fundofrutas.png'); /* Imagem de fundo na parte traseira da carta */
+    background-size: cover; /* Garante que a imagem cubra toda a área da carta */
+    background-position: center; /* Centraliza a imagem de fundo */
+    background-color: #3e2723; /* Cor de fundo marrom que será coberta pela imagem */
+    color: #fff;
+    transform: rotateY(0deg);
+}
+
+/* Estilo quando a carta está virada */
+.card.flipped {
+    transform: rotateY(180deg);
+    border-color: #FFD700;
+}
+
+/* Estilo da tela de finalização */
+.end-screen {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+    overflow: hidden;
+}
+
+.end-screen-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1002;
+    width: 80vw; /* Ajusta a largura máxima conforme a tela */
+    max-width: 600px; /* Limita a largura máxima */
+}
+
+.end-screen h1 {
+    font-family: 'Chewy', cursive;
+    font-size: calc(1.5em + 1vw); /* Ajusta o tamanho da fonte conforme a tela */
+}
+
+.end-screen p {
+    font-size: calc(1em + 0.5vw); /* Ajusta o tamanho da fonte conforme a tela */
+    margin: 10px 0;
+}
+
+.end-screen button {
+    font-size: calc(1em + 0.5vw); /* Ajusta o tamanho da fonte conforme a tela */
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.end-screen button:hover {
+    background-color: #388e3c;
+}
+
+/* Media Queries para Responsividade */
+
+
+/* Celulares */
+
+
+
+
+        /* Estilos para a tela de parabenização */
+        .congratulations-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-image: url('parabens.png'); /* Imagem de parabenização */
+            background-size: cover; /* Cobre toda a tela */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        /* Estilo do botão "Jogar Novamente" */
+        .restart-button {
+            padding: 50px 200px; /* Tamanho do botão */
+            font-size: 2rem; /* Tamanho da fonte */
+            background: linear-gradient(to bottom, #8d249c, #c57b9c); /* Degradê com as novas cores */
+            color: #fff; /* Cor do texto */
+            border: 2px solid white; /* Borda branca */
+            border-radius: 50px; /* Bordas bem arredondadas */
+            cursor: pointer; /* Muda o cursor para indicar que é clicável */
+            transition: background 0.3s ease; /* Transição suave ao passar o mouse */
+            margin-top: 600px; /* Aumenta a margem superior para descer o botão */
+            z-index: 1001; /* Coloca o botão acima da imagem */
+        }
+        
+        .restart-button:hover {
+            background: linear-gradient(to bottom, #a84c9d, #d2a6b1); /* Degradê diferente ao passar o mouse */
+        }
+
+        /* Estilos para o corpo da página */
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            background-image: url('images/fundo.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            overflow: hidden; /* Impede a rolagem */
+        }
+
+
+/* Estilo para o título do jogo */
+.game-title {
+    font-size: 6em; /* Aumentando o tamanho da fonte */
+    margin: 0;
+    padding: 20px;
+    font-family: 'Chewy', cursive; /* Fonte infantil e redonda */
+    color: #FF7800; /* Cor laranja mais viva */
+    text-align: center;
+    text-shadow: 
+        2px 2px 0 black,    /* Sombra preta (linha preta) */
+        -2px -2px 0 black,  /* Sombra preta (linha preta) */
+        2px -2px 0 black,   /* Sombra preta (linha preta) */
+        -2px 2px 0 black;   /* Sombra preta (linha preta) */
+}
+
+
+
+
+        /* Estilo para o tabuleiro de jogo */
+        .game-board {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 colunas fixas */
+            grid-gap: 1px; /* Diminui ainda mais o espaçamento entre as cartas */
+            justify-content: center;
+            margin-top: 20px; /* Espaço acima do tabuleiro */
+            width: 90vw; /* Largura do tabuleiro */
+            max-width: 800px; /* Largura máxima do tabuleiro */
+            margin-left: 100px; /* Aumenta a margem esquerda para mover o tabuleiro mais para a direita */
+        }
+
+        /* Estilo para as cartas */
+        .card {
+            width: 80%; /* Reduz ainda mais a largura das cartas */
+            height: 0; /* Altura inicial zero para controlar com padding */
+            padding-bottom: 80%; /* Ajusta o aspecto quadrado (altura igual à largura) */
+            background-color: transparent; /* Torna o fundo transparente para mostrar a imagem de fundo */
+            border: 6px solid white;
+            cursor: pointer;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.5s, border-color 0.3s;
+            border-radius: 15px;
+        }
+
+        /* Estilo para a parte frontal da carta */
+        .card .front {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5em; /* Tamanho da fonte */
+            font-weight: bold;
+            border-radius: 15px;
+            background-color: #ffffff;
+            background-size: cover;
+            transform: rotateY(180deg);
+        }
+
+        /* Estilo para a parte traseira da carta */
+        .card .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5em; /* Tamanho da fonte */
+            font-weight: bold;
+            border-radius: 15px;
+            background-image: url('images/fundofrutas.png'); /* Imagem de fundo na parte traseira da carta */
+            background-size: cover; /* Garante que a imagem cubra toda a área da carta */
+            background-position: center; /* Centraliza a imagem de fundo */
+            background-color: #3e2723; /* Cor de fundo marrom que será coberta pela imagem */
+            color: #fff;
+            transform: rotateY(0deg);
+        }
+
+        /* Estilo quando a carta está virada */
+        .card.flipped {
+            transform: rotateY(180deg);
+            border-color: #FFD700;
+        }
+
+        /* Estilo da tela de finalização */
+        .end-screen {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            align-items: center;
+            justify-content: center;
+            z-index: 1001;
+            overflow: hidden;
+        }
+
+        .end-screen-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            z-index: 1002;
+            width: 80vw; /* Ajusta a largura máxima conforme a tela */
+            max-width: 600px; /* Limita a largura máxima */
+        }
+
+        .end-screen h1 {
+            font-family: 'Chewy', cursive;
+            font-size: calc(1.5em + 1vw); /* Ajusta o tamanho da fonte conforme a tela */
+        }
+
+        .end-screen p {
+            font-size: calc(1em + 0.5vw); /* Ajusta o tamanho da fonte conforme a tela */
+            margin: 10px 0;
+        }
+
+        .end-screen button {
+            font-size: calc(1em + 0.5vw); /* Ajusta o tamanho da fonte conforme a tela */
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .end-screen button:hover {
+            background-color: #388e3c;
+        }
+
+        /* Media Queries para Responsividade */
+      
+
+        
+
+ .back-button {
+    position: absolute;
+    top: -140px; /* Distância do topo, quanto mais negativo mais sobe*/
+    left: -60px; /* Distância da esquerda, quanto mais negativo mais pra esquerda */
+    width: 350px; /* Ajuste o tamanho da imagem conforme necessário */
+    height: auto; /* Mantém a proporção da imagem */
+    cursor: pointer;
+    z-index: 1000; /* Certifica que a imagem fique acima de outros elementos */
+}
+
+/*TELA DE SIM OU NAO*/
+.confirmation-screen {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    position: fixed; /* Fixa a tela na viewport */
+    top: 0;
+    left: 0;
+    width: 100%; /* Largura total da tela */
+    height: 100%; /* Altura total da tela */
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente */
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+}
+
+.confirmation-content {
+    width: 45vw; /* Largura total da tela */
+    height: 40vw; /* Altura total da tela */
+    background-image: url('images/fundosimnao.png'); /* Imagem de fundo */
+    background-size: cover; /* Cobre toda a área */
+    background-position: center; /* Centraliza a imagem */
+    padding: 20px; /* Espaçamento interno */
+    border-radius: 35px; /* Bordas arredondadas */
+    text-align: center; /* Centraliza o texto */
+}
+
+.confirmation-content h2 { /* Se a pergunta estiver em um h2 */
+    margin-bottom: 20px; /* Diminui a margem inferior */
+}
+
+
+.button-container {
+    margin-top: -20px; /* Ajuste o valor conforme necessário */
+    display: flex;
+    justify-content: center; /* Alinha os botões horizontalmente */
+    gap: 10px; /* Espaçamento entre os botões */
+}
+
+.button-container img {
+    cursor: pointer; /* Adiciona um cursor de mão ao passar sobre os botões */
+    width: 150px; /* Ajuste o tamanho dos botões conforme necessário */
+    height: auto; /* Mantém a proporção */
+}
+
+
+#confirmYes, #confirmNo {
+    width: 330px; /* Defina a largura da imagem */
+    height: auto; /* Mantém a proporção da imagem */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    border: none; /* Remove bordas, se houver */
+}
+

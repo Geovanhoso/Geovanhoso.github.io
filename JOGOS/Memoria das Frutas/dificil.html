@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nível Difícil</title>
+    <link rel="stylesheet" href="dificil.css">
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+    <style>
+        /* Estilo para o título do jogo */
+        .game-title {
+            font-size: 6em; /* Aumentando o tamanho da fonte */
+            margin: 0;
+            padding: 20px;
+            font-family: 'Chewy', cursive; /* Fonte infantil e redonda */
+            color: #FF7800; /* Cor laranja viva */
+            text-align: center;
+            text-shadow: 
+                2px 2px 0px black,  /* Sombra preta para contorno */
+                -2px -2px 0px black, /* Sombra preta para contorno */
+                2px -2px 0px black,  /* Sombra preta para contorno */
+                -2px 2px 0px black;  /* Sombra preta para contorno */
+            letter-spacing: 2px; /* Aumenta o espaçamento entre as letras */
+            background-color: transparent; /* Fundo transparente */
+        }
+    </style>
+</head>
+<body>
+    <div class="confirmation-screen" id="confirmationScreen" style="display: none;">
+        <div class="confirmation-content">
+            <img src="images/sair.png" alt="Deseja sair?" style="width: 500px; height: auto;"> 
+            <div class="button-container">
+                <img id="confirmYes" src="images/Sim.png" alt="Sim">
+                <img id="confirmNo" src="images/Nao.png" alt="Não">
+            </div>
+        </div>
+    </div>
+
+    <img src="images/voltar.png" alt="Voltar" class="back-button" onclick="showConfirmation()">
+
+    <div class="game-container">
+        <div class="game-title">Memória das frutas - Difícil</div>
+
+        <div class="game-board" id="gameBoard"></div>
+    </div>
+
+    <div class="congratulations-screen" id="congratulationsScreen" style="display: none;">
+        <button class="restart-button" onclick="startGame()">Jogar Novamente</button>
+    </div>
+
+    <script src="dificil.js"></script>
+    <script>
+        // Funções para a confirmação de saída
+        document.getElementById('confirmYes').addEventListener('click', () => {
+            window.location.href = 'inicial.html'; // Redireciona para a tela inicial
+        });
+
+        document.getElementById('confirmNo').addEventListener('click', () => {
+            document.getElementById('confirmationScreen').style.display = 'none'; // Fecha a tela de confirmação
+        });
+
+        function showConfirmation() {
+            document.getElementById('confirmationScreen').style.display = 'flex'; // Mostra a tela de confirmação
+        }
+    </script>
+</body>
+</html>
