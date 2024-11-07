@@ -60,7 +60,7 @@
     
             .game-board {
                 display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Ajusta o tamanho das cartas */
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Ajusta o tamanho das cartas */
                 gap: 10px;
                 justify-items: center;
                 width: 100%;
@@ -83,22 +83,22 @@
                 height: 50px;
             }
     
-            /* Ajuste no tamanho das cartas */
+            /* Ajuste no tamanho das cartas - diminui o tamanho */
             .card {
-                width: 80%;
-                max-width: 100px; /* Limita o tamanho das cartas */
+                width: 60%;  /* Diminui o tamanho das cartas em relação à largura da tela */
+                max-width: 75px; /* Limita o tamanho das cartas */
             }
         }
     
         /* Ajuste para o grid das cartas */
         .game-board {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Isso vai garantir que as cartas se ajustem bem */
+            grid-template-columns: repeat(4, 1fr); /* Garante 4 colunas */
             gap: 15px; /* Ajuste entre as cartas */
             justify-items: center;
+            margin: 0 auto; /* Centraliza o conteúdo */
         }
     </style>
-    
 </head>
 <body>
 <div class="confirmation-screen" id="confirmationScreen" style="display: none;">
