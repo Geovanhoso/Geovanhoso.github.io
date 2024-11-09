@@ -1,69 +1,98 @@
 /* Arquivo: responsive.css */
 
-/* Ajustes para Tablets */
+/* Ajustes para telas médias (tablets) */
 @media (max-width: 1024px) {
     .game-title {
-        font-size: calc(1.2em + 1vw); /* Ajusta o tamanho da fonte */
+        font-size: 1.8rem;
     }
 
-    .game-board {
-        grid-gap: 1px; /* Mantém o espaçamento entre as cartas */
+    .back-button {
+        font-size: 2.5rem;
+        width: 100px;
+        height: 100px;
     }
 
-    .end-screen-content {
-        width: 85vw; /* Ajusta a largura máxima */
-        max-width: 500px;
+    .congratulations-screen img {
+        width: 70%;
+        max-width: 350px;
+    }
+
+    .restart-button {
+        font-size: 1.3rem;
     }
 }
 
-/* Ajustes para Celulares */
+/* Ajustes para dispositivos móveis (celulares) */
 @media (max-width: 768px) {
     .game-title {
-        font-size: calc(1em + 1vw); /* Ajusta o tamanho da fonte */
+        font-size: 1.5rem;
+    }
+
+    .back-button {
+        font-size: 2rem;
+        width: 80px;
+        height: 80px;
     }
 
     .game-board {
-        display: grid; /* Certifique-se de usar grid */
-        grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas menores */
-        gap: 10px; /* Adiciona um pequeno espaço entre as cartas */
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
     }
 
-    .end-screen-content {
-        width: 90vw; /* Ajusta a largura máxima */
-        max-width: 400px;
-    }
-
-    .card {
-        width: 100%; /* As cartas ocupam toda a largura da coluna */
-        padding-bottom: 100%; /* Mantém a proporção de 1:1 para o formato quadrado */
-        position: relative;
-    }
-}
-
-/* Ajustes para Dispositivos Menores */
-@media (max-width: 480px) {
-    .game-title {
-        font-size: calc(0.75em + 1vw); /* Ajusta o tamanho da fonte */
-    }
-
-    .game-board {
-        grid-template-columns: 1fr; /* 1 coluna em dispositivos menores */
-    }
-
-    .end-screen-content {
-        width: 90vw; /* Ajusta a largura máxima */
+    .congratulations-screen img {
+        width: 80%;
         max-width: 300px;
     }
+}
 
-    .card {
-        width: 100%; /* Ajusta a largura das cartas para preencher toda a coluna */
-        padding-bottom: 100%;
+/* Ajustes para dispositivos móveis pequenos (telas menores que 480px) */
+@media (max-width: 480px) {
+    .game-title {
+        font-size: 1.2rem;
+    }
+
+    .back-button {
+        font-size: 1.5rem;
+        width: 60px;
+        height: 60px;
+    }
+
+    .game-board {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .congratulations-screen img {
+        width: 90%;
+        max-width: 250px;
     }
 }
-/* Ajuste das imagens */
-@media (max-width: 768px) {
-    .confirmation-content img {
-        width: 100%; /* Imagem ocupa 100% da largura disponível */
-        height: auto; /* Mantém a proporção */
+
+/* Ajustes para o modo paisagem */
+@media (orientation: landscape) {
+    .game-title {
+        font-size: 1.2rem;
+        margin: 10px;
+    }
+
+    .back-button {
+        font-size: 1.5rem;
+        width: 60px;
+        height: 60px;
+    }
+
+    .congratulations-screen {
+        height: 100vh;
+        width: 100vw;
+        padding: 40px;
+    }
+
+    .congratulations-screen img {
+        width: 50%;
+        max-width: none;
+    }
+
+    .restart-button {
+        font-size: 1.5rem;
     }
 }
