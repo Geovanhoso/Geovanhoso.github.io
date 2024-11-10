@@ -3,196 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>facil</title>
+    <title>Memória das Frutas - Fácil</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="styles.css"> <!-- Adicione a folha de estilos do botão -->
-    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Estilos adicionais do botão -->
+    <link rel="stylesheet" href="responsive.css"> <!-- Estilos de responsividade -->
     <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chewy&display=swap">
-    <style>
-        /* Geral - Configurações padrão */
-        body {
-            font-family: 'Chewy', sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-        }
-
-        /* Título do jogo */
-        .game-title {
-            font-size: 2rem; /* Tamanho padrão para o título */
-            margin: 20px;
-        }
-
-        /* Estilo para o botão de voltar */
-        .back-button {
-            position: absolute; /* Posiciona o botão fora do fluxo normal */
-            top: 5px; /* Distância do topo - ajustado para subir mais */
-            left: 20px; /* Distância da esquerda */
-            width: 150px; /* Aumenta a largura do botão */
-            height: 150px; /* Aumenta a altura do botão */
-            font-size: 4rem; /* Aumenta o tamanho da fonte */
-            cursor: pointer;
-            z-index: 10; /* Garante que o botão fique sobre os outros elementos */
-        }
-
-        /* Contêiner do Jogo */
-        .game-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        /* Ajustes para o modo paisagem */
-        @media (orientation: landscape) {
-            .game-title {
-                font-size: 1.5rem; /* Reduzir o tamanho da fonte no modo paisagem */
-                margin: 10px 0; /* Ajusta as margens */
-            }
-
-            .back-button {
-                font-size: 1.8rem; /* Reduz o tamanho do botão no modo paisagem */
-                width: 50px; /* Ajusta o tamanho do botão no modo paisagem */
-                height: 50px;
-            }
-
-            .game-board {
-                display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Aumenta o tamanho das cartas na horizontal */
-                gap: 15px; /* Ajuste entre as cartas no modo paisagem */
-                justify-items: center;
-                width: 100%;
-            }
-
-            .game-container {
-                padding: 10px;
-            }
-            .congratulations-screen {
-        height: 100vh; /* Garante que ocupe toda a altura da tela no modo paisagem */
-        width: 100vw;  /* Garante que ocupe toda a largura da tela no modo paisagem */
-        padding: 40px; /* Aumenta o espaçamento interno para um layout mais agradável */
-    }
-
-    .congratulations-screen img {
-        width: 50%; /* Ajusta o tamanho da imagem no modo paisagem */
-        max-width: none; /* Remove o limite de largura para a imagem */
-    }
-
-    .restart-button {
-        font-size: 1.5rem; /* Aumenta o tamanho do botão no modo paisagem */
-        padding: 15px 30px; /* Ajusta o tamanho do botão */
-    }
-        }
-
-        /* Ajustes para telas menores no modo retrato */
-        @media (max-width: 768px) {
-            .game-title {
-                font-size: 1.5rem;
-            }
-
-            .back-button {
-                font-size: 1.8rem; /* Tamanho aumentado do botão para telas menores */
-                width: 50px; /* Aumenta o tamanho do botão para telas pequenas */
-                height: 50px;
-            }
-
-            /* Ajuste no tamanho das cartas - aumenta um pouco a largura sem mexer na altura */
-            .card {
-                width: 120%;  /* Aumenta um pouco a largura das cartas */
-                max-width: 120px; /* Aumenta o tamanho máximo das cartas */
-                height: 30px; /* Aumenta um pouco a altura das cartas */
-            }
-        }
-
-        /* Ajuste para o grid das cartas */
-        .game-board {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr); /* Garante 4 colunas */
-            gap: 21px; /* Ajuste o espaçamento entre as cartas para 10px */
-            justify-items: center;
-            margin: 0 auto; /* Centraliza o conteúdo */
-        }
-
-        /* Tela de Parabenização */
-        .congratulations-screen {
-            display: none;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 20px;
-            width: 100%;
-            max-width: 500px; /* Limita a largura máxima para telas grandes */
-            margin: 0 auto;
-        }
-
-        .congratulations-screen img {
-            width: 80%; /* A imagem ocupa 80% da largura da tela */
-            max-width: 400px; /* Limita a largura máxima da imagem */
-            height: auto; /* Mantém a proporção da imagem */
-        }
-
-        .restart-button {
-            background-color: #4CAF50;
-            color: white;
-            font-size: 1.2rem;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-
-        .restart-button:hover {
-            background-color: #45a049;
-        }
-
-        /* Responsividade - Ajustes para telas pequenas */
-        @media (max-width: 600px) {
-            .congratulations-screen img {
-                width: 90%; /* A imagem ocupa 90% da largura da tela */
-            }
-
-            .restart-button {
-                font-size: 1rem; /* Reduz o tamanho da fonte do botão */
-                padding: 8px 16px; /* Ajusta o tamanho do botão */
-            }
-        }
-    </style>
 </head>
 <body>
 
-<!-- Tela de Confirmação para Sair -->
-<div class="confirmation-screen" id="confirmationScreen" style="display: none;">
-    <div class="confirmation-content">
-        <img src="images/sair.png" alt="Deseja sair?" style="width: 500px; height: auto;">
-        <div class="button-container">
-            <img id="confirmYes" src="images/Sim.png" alt="Sim" onclick="confirmYes()">
-            <img id="confirmNo" src="images/Nao.png" alt="Não" onclick="confirmNo()">
+    <!-- Tela de Confirmação para Sair -->
+    <div class="confirmation-screen" id="confirmationScreen" style="display: none;">
+        <div class="confirmation-content">
+            <img src="images/sair.png" alt="Deseja sair?" class="sair-image">
+            <div class="button-container">
+                <img id="confirmYes" src="images/Sim.png" alt="Sim" onclick="confirmYes()">
+                <img id="confirmNo" src="images/Nao.png" alt="Não" onclick="confirmNo()">
+            </div>
         </div>
     </div>
-</div>
 
-<!-- Botão de Voltar -->
-<img src="images/voltar.png" alt="Voltar" class="back-button" style="width: 150px; height: 150px;" onclick="window.location.href='inicial.html'">
+    <!-- Botão de Voltar -->
+    <div class="back-button">
+        <img src="images/voltar.png" alt="Voltar" onclick="showConfirmation()">
+    </div>
 
-<!-- Temporizador -->
-<div class="timer" id="timer"></div>
+    <!-- Temporizador -->
+    <div class="timer" id="timer"></div>
 
-<!-- Contêiner do Jogo -->
-<div class="game-container">
-    <div class="game-title">Memória das Frutas-Fácil</div>
-    <div class="game-board" id="gameBoard"></div>
-</div>
+    <!-- Contêiner do Jogo -->
+    <div class="game-container">
+        <div class="game-title">Memória das Frutas - Fácil</div>
+        <div class="game-board" id="gameBoard"></div>
+    </div>
 
-<!-- Tela de Parabenização -->
-<div class="congratulations-screen" id="congratulationsScreen" style="display: none;">
-    <button class="restart-button" onclick="startGame()">Jogar Novamente</button>
-</div>
+    <!-- Tela de Parabenização -->
+    <div class="congratulations-screen" id="congratulationsScreen" style="display: none;">
+        <div class="congratulations-content">
+        
+            <button class="restart-button" onclick="startGame()">Jogar Novamente</button>
+        </div>
+    </div>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
