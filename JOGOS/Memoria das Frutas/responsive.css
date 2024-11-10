@@ -1,98 +1,144 @@
 /* Arquivo: responsive.css */
 
-/* Ajustes para telas médias (tablets) */
+/* Ajustes para tablets */
 @media (max-width: 1024px) {
     .game-title {
-        font-size: 1.8rem;
+        font-size: 2.5em;
     }
 
     .back-button {
-        font-size: 2.5rem;
-        width: 100px;
-        height: 100px;
+        width: 40px;
+        height: 40px;
     }
 
-    .congratulations-screen img {
-        width: 70%;
-        max-width: 350px;
+    .congratulations-content {
+        width: 70vw;
+        max-width: 500px;
+        height: 60vh;
     }
 
     .restart-button {
-        font-size: 1.3rem;
+        font-size: 1.3em;
     }
 }
 
 /* Ajustes para dispositivos móveis (celulares) */
 @media (max-width: 768px) {
     .game-title {
-        font-size: 1.5rem;
+        font-size: 2em;
     }
 
     .back-button {
-        font-size: 2rem;
-        width: 80px;
-        height: 80px;
+        width: 40px;
+        height: 40px;
     }
 
     .game-board {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 15px;
+        grid-template-columns: repeat(3, 1fr); /* 3 colunas em telas menores */
+        gap: 10px;
+        width: 95vw;
     }
 
-    .congratulations-screen img {
-        width: 80%;
-        max-width: 300px;
+    .card {
+        padding-bottom: 100%; /* Mantém o aspecto quadrado */
+    }
+
+    .congratulations-content {
+        width: 80vw;
+        max-width: 400px;
+        height: 65vh;
+    }
+
+    .restart-button {
+        font-size: 1.2em;
     }
 }
 
 /* Ajustes para dispositivos móveis pequenos (telas menores que 480px) */
 @media (max-width: 480px) {
     .game-title {
-        font-size: 1.2rem;
+        font-size: 1.8em;
     }
 
     .back-button {
-        font-size: 1.5rem;
-        width: 60px;
-        height: 60px;
+        width: 35px;
+        height: 35px;
     }
 
     .game-board {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em dispositivos menores */
+        gap: 8px;
+        width: 90vw;
     }
 
-    .congratulations-screen img {
-        width: 90%;
-        max-width: 250px;
-    }
-}
-
-/* Ajustes para o modo paisagem */
-@media (orientation: landscape) {
-    .game-title {
-        font-size: 1.2rem;
-        margin: 10px;
+    .card {
+        padding-bottom: 100%; /* Mantém o aspecto quadrado */
     }
 
-    .back-button {
-        font-size: 1.5rem;
-        width: 60px;
-        height: 60px;
-    }
-
-    .congratulations-screen {
-        height: 100vh;
-        width: 100vw;
-        padding: 40px;
-    }
-
-    .congratulations-screen img {
-        width: 50%;
-        max-width: none;
+    .congratulations-content {
+        width: 90vw;
+        max-width: 300px;
+        height: 60vh;
     }
 
     .restart-button {
-        font-size: 1.5rem;
+        font-size: 1em;
     }
 }
+
+/* Ajustes para o modo paisagem em dispositivos móveis */
+@media (max-width: 768px) and (orientation: landscape) {
+    .game-title {
+        font-size: 2.2em;
+    }
+
+    .back-button {
+        width: 35px;
+        height: 35px;
+    }
+
+    .game-board {
+        grid-template-columns: repeat(3, 1fr); /* 3 colunas no modo paisagem */
+        gap: 8px;
+        width: 95vw;
+    }
+
+    .congratulations-content {
+        width: 80vw;
+        max-width: 400px;
+        height: 70vh;
+    }
+
+    .restart-button {
+        font-size: 1.2em;
+    }
+}
+
+/* Ajustes para o modo paisagem em telas menores */
+@media (max-width: 480px) and (orientation: landscape) {
+    .game-title {
+        font-size: 1.6em;
+    }
+
+    .back-button {
+        width: 30px;
+        height: 30px;
+    }
+
+    .game-board {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas no modo paisagem */
+        gap: 6px;
+        width: 90vw;
+    }
+
+    .congratulations-content {
+        width: 90vw;
+        max-width: 300px;
+        height: 65vh;
+    }
+
+    .restart-button {
+        font-size: 1em;
+    }
+}
+
