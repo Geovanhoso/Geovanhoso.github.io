@@ -144,22 +144,18 @@
     <img src="titulo.png" alt="Cooking Yummy" class="titulo-img">
 
     <div class="button-container">
-        <a href="#" class="button button1" onclick="showGif('JOGOS/Bud e as Cores/index.html')">
+        <a href="#" class="button button1" onclick="showModal()">
             Bud e as Cores
         </a>
-        <a href="#" class="button button2" onclick="showModal('encaixe')">
+        <a href="#" class="button button2" onclick="showModal()">
             Encaixe os Alimentos
         </a>
-        <a href="#" class="button button3" onclick="showModal('bud')">
+        <a href="#" class="button button3" onclick="showModal()">
             Bud e os Legumes
         </a>
-        <a href="#" class="button button4" onclick="showGif('JOGOS/Memoria das Frutas/inicial.html')">
+        <a href="#" class="button button4" onclick="showModal()">
             Memória das Frutas
         </a>
-    </div>
-
-    <div class="gif-overlay" id="gifOverlay">
-        <img src="carregamento.gif" alt="Carregando...">
     </div>
 
     <!-- Modal de mensagem -->
@@ -171,25 +167,8 @@
     </div>
 
     <script>
-        function showGif(url) {
-            const gifOverlay = document.getElementById('gifOverlay');
-            gifOverlay.style.display = 'flex';
-
-            setTimeout(function() {
-                window.location.href = url;
-            }, 500);
-        }
-
-        function showModal(game) {
-            // Define a mensagem no modal dependendo do jogo
-            const message = game === 'encaixe' 
-                ? 'Disponível na próxima atualização'
-                : 'Disponível na próxima atualização';
-
-            // Atualiza a mensagem no modal
-            document.getElementById('modal-message').innerText = message;
-
-            // Exibe o modal
+        function showModal() {
+            // Exibe o modal com a mensagem
             const modal = document.getElementById('modal');
             modal.style.display = 'flex';
         }
