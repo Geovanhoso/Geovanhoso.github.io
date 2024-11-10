@@ -29,18 +29,18 @@
     }
 
     .back-button {
-        width: 40px;
-        height: 40px;
+        width: 35px;
+        height: 35px;
     }
 
     .game-board {
         grid-template-columns: repeat(3, 1fr); /* 3 colunas em telas menores */
-        gap: 10px;
+        gap: 8px;
         width: 95vw;
     }
 
     .card {
-        padding-bottom: 100%; /* Mantém o aspecto quadrado */
+        padding-bottom: 80%; /* Mantém o aspecto quadrado, com proporção um pouco menor */
     }
 
     .congratulations-content {
@@ -57,22 +57,22 @@
 /* Ajustes para dispositivos móveis pequenos (telas menores que 480px) */
 @media (max-width: 480px) {
     .game-title {
-        font-size: 1.8em;
+        font-size: 1.6em;
     }
 
     .back-button {
-        width: 35px;
-        height: 35px;
+        width: 30px;
+        height: 30px;
     }
 
     .game-board {
         grid-template-columns: repeat(2, 1fr); /* 2 colunas em dispositivos menores */
-        gap: 8px;
+        gap: 6px;
         width: 90vw;
     }
 
     .card {
-        padding-bottom: 100%; /* Mantém o aspecto quadrado */
+        padding-bottom: 75%; /* Aspecto menor para telas pequenas */
     }
 
     .congratulations-content {
@@ -89,35 +89,7 @@
 /* Ajustes para o modo paisagem em dispositivos móveis */
 @media (max-width: 768px) and (orientation: landscape) {
     .game-title {
-        font-size: 2.2em;
-    }
-
-    .back-button {
-        width: 35px;
-        height: 35px;
-    }
-
-    .game-board {
-        grid-template-columns: repeat(3, 1fr); /* 3 colunas no modo paisagem */
-        gap: 8px;
-        width: 95vw;
-    }
-
-    .congratulations-content {
-        width: 80vw;
-        max-width: 400px;
-        height: 70vh;
-    }
-
-    .restart-button {
-        font-size: 1.2em;
-    }
-}
-
-/* Ajustes para o modo paisagem em telas menores */
-@media (max-width: 480px) and (orientation: landscape) {
-    .game-title {
-        font-size: 1.6em;
+        font-size: 1.8em;
     }
 
     .back-button {
@@ -126,9 +98,45 @@
     }
 
     .game-board {
-        grid-template-columns: repeat(2, 1fr); /* 2 colunas no modo paisagem */
-        gap: 6px;
+        grid-template-columns: repeat(3, 1fr); /* 3 colunas no modo paisagem */
+        gap: 8px;
         width: 90vw;
+    }
+
+    .card {
+        padding-bottom: 65%; /* Menor para modo paisagem */
+    }
+
+    .congratulations-content {
+        width: 80vw;
+        max-width: 350px;
+        height: 65vh;
+    }
+
+    .restart-button {
+        font-size: 1em;
+    }
+}
+
+/* Ajustes para o modo paisagem em telas menores */
+@media (max-width: 480px) and (orientation: landscape) {
+    .game-title {
+        font-size: 1.5em;
+    }
+
+    .back-button {
+        width: 25px;
+        height: 25px;
+    }
+
+    .game-board {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas no modo paisagem */
+        gap: 5px;
+        width: 90vw;
+    }
+
+    .card {
+        padding-bottom: 60%; /* Proporção reduzida para ajustar ao modo paisagem */
     }
 
     .congratulations-content {
@@ -138,7 +146,6 @@
     }
 
     .restart-button {
-        font-size: 1em;
+        font-size: 0.9em;
     }
 }
-
