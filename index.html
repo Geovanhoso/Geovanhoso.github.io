@@ -153,7 +153,7 @@
         <a href="#" class="button button3" onclick="showModal()">
             Bud e os Legumes
         </a>
-        <a href="#" class="button button4" onclick="showModal()">
+        <a href="#" class="button button4" onclick="showGif('Memoria das Frutas/inicial.html')">
             Memória das Frutas
         </a>
     </div>
@@ -177,6 +177,14 @@
             // Fecha o modal
             const modal = document.getElementById('modal');
             modal.style.display = 'none';
+        }
+        function showGif(url) {
+            const gifOverlay = document.getElementById('gifOverlay');
+            gifOverlay.style.display = 'flex';
+
+            setTimeout(function() {
+                window.location.href = url;
+            }, 500);
         }
     </script>
 
