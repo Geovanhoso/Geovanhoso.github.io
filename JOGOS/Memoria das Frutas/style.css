@@ -15,17 +15,6 @@ body {
     overflow: hidden; /* Impede a rolagem */
 }
 
-/* Estilo para o título do jogo */
-.game-title {
-    font-size: calc(1.5em + 1vw); /* Ajusta o tamanho da fonte com base no tamanho da tela */
-    margin: 0;
-    padding: 20px;
-    font-family: 'Comic Sans MS', cursive;
-    color: #FFD700;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
-    text-align: center;
-}
-
 /* Estilo para o tabuleiro de jogo */
 .game-board {
     display: grid;
