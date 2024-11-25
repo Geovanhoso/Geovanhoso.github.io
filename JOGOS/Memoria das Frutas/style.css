@@ -219,7 +219,7 @@ body {
 
 /* Estilo para o título do jogo */
 .game-title {
-    font-size: 6em; /* Aumentando o tamanho da fonte */
+    font-size: 3em; /* Aumentando o tamanho da fonte */
     margin: 0;
     padding: 20px;
     font-family: 'Chewy', cursive; /* Fonte infantil e redonda */
