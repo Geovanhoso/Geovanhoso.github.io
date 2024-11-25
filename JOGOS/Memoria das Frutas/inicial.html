@@ -117,13 +117,15 @@
             text-decoration: none; /* Remove o sublinhado */
         }
 
-        .back-arrow {
-            width: 200px; /* Tamanho maior da seta */
-            height: auto; /* Mantém a proporção */
-            cursor: pointer; /* Cursor de ponteiro indicando que é clicável */
-            transition: transform 0.3s ease; /* Adiciona efeito de transição */
-        }
-
+    .back-button {
+    position: fixed; /* Fixo na viewport */
+    top: 10px; /* Distância do topo */
+    left: 10px; /* Distância da esquerda */
+    width: 50px; /* Tamanho do botão */
+    height: 50px;
+    cursor: pointer;
+    z-index: 1000; /* Fica acima de outros elementos */
+}
         /* Efeito de hover (quando o usuário passa o mouse por cima da seta) */
         .back-arrow:hover {
             transform: scale(1.1); /* Aumenta um pouco o tamanho da seta */
